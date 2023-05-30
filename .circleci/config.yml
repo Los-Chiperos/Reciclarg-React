@@ -5,7 +5,7 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - "	ff:b3:33:e3:ad:97:55:9c:4b:fd:2f:04:cf:ba:8f:8e"
+            - "ff:b3:33:e3:ad:97:55:9c:4b:fd:2f:04:cf:ba:8f:8e"
       - checkout
       - run:
           name: Set NODE_NO_WARNINGS variable
