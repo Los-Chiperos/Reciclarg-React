@@ -3,7 +3,7 @@ function Contenedor() {
     return (
       <section className="mb-32 text-gray-800 text-center">
         <br></br>
-        <h2 className="text-3xl font-bold mb-20">Why is it so great?</h2>
+        <h2 className="text-3xl font-bold mb-20">Busca el contenedor adecuado</h2>
   
         <div className="grid lg:gap-x-12 lg:grid-cols-3">
           <div className="mb-12 lg:mb-0">

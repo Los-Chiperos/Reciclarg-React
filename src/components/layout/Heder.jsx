@@ -1,6 +1,8 @@
 import { Link, NavLink } from "react-router-dom";
 import React, { useState } from "react";
 import Login from "../pages/Login";
+import Registrar from "../pages/Registrar";
+
 function Heder() {
   const [showMenu, setShowMenu] = useState(false);
 
@@ -80,7 +82,7 @@ function Heder() {
               <a
                 href="/login"
                 className="py-2 px-2 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300"
-               onClick={Login()}>
+               onClick={login()}>
                 Registrarse
               </a>
 
@@ -97,7 +99,7 @@ function Heder() {
             <ul className="pt-4 pb-3">
               <li>
                 <a
-                  href="/login.html"
+                  href="/login"
                   className="text-center block pl-4 text-sm font-semibold text-gray-900 hover:bg-green-500 hover:text-white transition duration-300 py-2"
                 >
                   Registrarse
@@ -105,7 +107,7 @@ function Heder() {
               </li>
               <li>
                 <a
-                  href="/register.html"
+                  href="/Registrar"
                   className="text-center block pl-4 text-sm font-semibold text-gray-900 hover:bg-green-500 hover:text-white transition duration-300 py-2"
                 >
                   Logearse
