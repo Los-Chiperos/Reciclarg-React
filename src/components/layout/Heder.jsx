@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import React, { useState } from "react";
 import Login from "../pages/Login";
 import Registrar from "../pages/Registrar";
+import Pruebita from "../Home/Pruebita";
 
 function Heder() {
   const [showMenu, setShowMenu] = useState(false);
@@ -32,6 +33,7 @@ function Heder() {
                 <a
                   href=""
                   className="py-4 px-2 text-green-500 border-b-4 border-green-500 font-semibold"
+                  onClick={Pruebita()}
                 >
                   Inicio
                 </a>
