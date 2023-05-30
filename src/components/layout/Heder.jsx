@@ -120,6 +120,7 @@ function Heder() {
                 <a
                   href=""
                   className="block pl-4 text-sm font-semibold text-gray-900 hover:bg-green-500 transition hover:text-white duration-300 py-2"
+                  onClick={Pruebita()}
                 >
                   Inicio
                 </a>
