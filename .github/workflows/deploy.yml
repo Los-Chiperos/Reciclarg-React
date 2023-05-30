@@ -1,0 +1,30 @@
+name: Deploy to Nginx Server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      with:
+        project_id: ${{ env.PROJECT_ID }}
+        credentials: ${{ env.CREDENTIALS }}
+        script: |
+          cd /var/www/html
+          git clone https://github.com/Los-Chiperos/Reciclarg.git
+          cd Reciclarg
+          npm install
+          sudo systemctl restart nginx
+env:
+  PROJECT_ID:  helpful-kit-383103
+  CREDENTIALS: ${{ secrets.GCP_CREDENCIALES }}
+  HOST: reciclarg.cloud
+  USERNAME: nicolas_zelarayan
+  PASSWORD: ${{ secrets.SERVER_PASSWORD }}
+  
+
