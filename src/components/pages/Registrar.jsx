@@ -1,5 +1,4 @@
 import React from 'react';
-import { loadConfigFromFile } from 'vite';
 
 function Registrar() {
   return (
@@ -50,8 +49,7 @@ function Registrar() {
           </div>
           <div className="mt-4 flex items-center justify-between">
             <span className="border-b w-1/5 md:w-1/4"></span>
-            <a href="/login" className="text-xs hover:font-semibold text-green-600 uppercase"
-            onClick={login()}>¿Tienes cuenta? Logeate</a>
+            <a href="/login.html" className="text-xs hover:font-semibold text-green-600 uppercase">¿Tienes cuenta? Logeate</a>
             <span className="border-b w-1/5 md:w-1/4"></span>
           </div>
         </div>
