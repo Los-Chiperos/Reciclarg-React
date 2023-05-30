@@ -33,7 +33,7 @@ function Heder() {
                 <a
                   href=""
                   className="py-4 px-2 text-green-500 border-b-4 border-green-500 font-semibold"
-                  onClick={Pruebita()}
+                  onClick={Home()}
                 >
                   Inicio
                 </a>
@@ -102,7 +102,7 @@ function Heder() {
             <ul className="pt-4 pb-3">
               <li>
                 <a
-                  href="/login"
+                  href="/Registrar"
                   className="text-center block pl-4 text-sm font-semibold text-gray-900 hover:bg-green-500 hover:text-white transition duration-300 py-2"
                   onClick={Registrar()}
                 >
@@ -111,7 +111,7 @@ function Heder() {
               </li>
               <li>
                 <a
-                  href="/register.html"
+                  href="/Login"
                   className="text-center block pl-4 text-sm font-semibold text-gray-900 hover:bg-green-500 hover:text-white transition duration-300 py-2"
                   onClick={Login()} 
                 >
@@ -122,7 +122,7 @@ function Heder() {
                 <a
                   href=""
                   className="block pl-4 text-sm font-semibold text-gray-900 hover:bg-green-500 transition hover:text-white duration-300 py-2"
-                  onClick={Pruebita()}
+                  onClick={Home()}
                 >
                   Inicio
                 </a>
