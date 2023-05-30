@@ -31,8 +31,9 @@ function Heder() {
               {/* Primary Navbar items */}
               <div className="hidden md:flex items-center space-x-1">
                 <a
-                  href=""
+                  href="/"
                   className="py-4 px-2 text-green-500 border-b-4 border-green-500 font-semibold"
+                  onClick={Pruebita()}
                 >
                   Inicio
                 </a>
@@ -119,8 +120,9 @@ function Heder() {
               </li>
               <li>
                 <a
-                  href=""
+                  href="/"
                   className="block pl-4 text-sm font-semibold text-gray-900 hover:bg-green-500 transition hover:text-white duration-300 py-2"
+                  onClick={Pruebita()}
                 >
                   Inicio
                 </a>
