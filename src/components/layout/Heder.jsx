@@ -104,6 +104,7 @@ function Heder() {
                 <a
                   href="/login"
                   className="text-center block pl-4 text-sm font-semibold text-gray-900 hover:bg-green-500 hover:text-white transition duration-300 py-2"
+                  onClick={Registrar()}
                 >
                   Registrarse
                 </a>
@@ -112,6 +113,7 @@ function Heder() {
                 <a
                   href="/register.html"
                   className="text-center block pl-4 text-sm font-semibold text-gray-900 hover:bg-green-500 hover:text-white transition duration-300 py-2"
+                  onClick={Login()} 
                 >
                   Logearse
                 </a>
