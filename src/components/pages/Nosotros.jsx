@@ -4,7 +4,7 @@ import Header from "../layout/Header";
 function Nosotros() {
   return (
     <>
-      <Header />
+      <Heder />
 
       <div className="container mx-auto py-8 h-screen background-image bg-cover">
         <div className="flex flex-col text-center gap-4 mb-8 p-4">
@@ -17,7 +17,6 @@ function Nosotros() {
         </div>
 
         <div className="flex items-center justify-center flex-wrap gap-4 p-4">
-          {/* Tarjeta 1 */}
           <div className="card bg-amber-100">
             <img
               src="./pofile1.jpeg"
@@ -37,7 +36,6 @@ function Nosotros() {
             </div>
           </div>
             
-                    {/* Tarjeta 1 */}
                     <div className="card bg-amber-100">
             <img
               src="./pofile1.jpeg"
@@ -57,7 +55,6 @@ function Nosotros() {
             </div>
           </div>
 
-                    {/* Tarjeta 1 */}
                     <div className="card bg-amber-100">
             <img
               src="./pofile1.jpeg"
@@ -77,7 +74,6 @@ function Nosotros() {
             </div>
           </div>
 
-                    {/* Tarjeta 1 */}
                     <div className="card bg-amber-100">
             <img
               src="./pofile1.jpeg"
@@ -97,7 +93,6 @@ function Nosotros() {
             </div>
           </div>
 
-                    {/* Tarjeta 1 */}
                     <div className="card bg-amber-100">
             <img
               src="./pofile1.jpeg"
@@ -117,7 +112,7 @@ function Nosotros() {
             </div>
           </div>
 
-                    {/* Tarjeta 1 */}
+
                     <div className="card bg-amber-100">
             <img
               src="./pofile1.jpeg"
@@ -137,7 +132,7 @@ function Nosotros() {
             </div>
           </div>
 
-                    {/* Tarjeta 1 */}
+
                     <div className="card bg-amber-100">
             <img
               src="./pofile1.jpeg"
@@ -157,7 +152,6 @@ function Nosotros() {
             </div>
           </div>
 
-                    {/* Tarjeta 1 */}
                     <div className="card bg-amber-100">
             <img
               src="./pofile1.jpeg"
