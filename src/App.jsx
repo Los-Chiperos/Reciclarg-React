@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Login from "./components/pages/Login";
 import Nosotros from "./components/pages/Nosotros";
 import Huella from "./components/pages/Huella";
+import Faq from "./components/pages/Faq";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/Eror" element={<Eror/>}/>
           <Route path="/Nosotros" element={<Nosotros/>}/>
           <Route path="/Huella" element={<Huella/>}/>
+          <Route path="/Faq" element={<Faq/>}/>
           
         </Routes>
 

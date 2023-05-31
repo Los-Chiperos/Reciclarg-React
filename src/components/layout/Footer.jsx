@@ -31,10 +31,10 @@ function Footer() {
         </div>
         <div className="px-5 py-2">
           <a
-            href="#"
+            href="/Faq"
             className="text-b ase leading-6 text-amber-100 hover:text-amber-100"
           >
-            About
+            FAQ
           </a>
         </div>
       </div>
