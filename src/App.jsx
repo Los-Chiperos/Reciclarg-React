@@ -6,6 +6,7 @@ import Eror from "./components/pages/Eror";
 import Registrar from "./components/pages/Registrar";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Login from "./components/pages/Login";
+import Nosotros from "./components/pages/Nosotros";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/Registrar" element={<Registrar/>}/>
           <Route path="/Login" element={<Login/>}/>
           <Route path="/Eror" element={<Eror/>}/>
+          <Route path="/Nosotros" element={<Nosotros/>}/>
           
         </Routes>
 
