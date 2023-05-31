@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-import Registrar from './Registrar';
 
 
 const Login = () => {
@@ -46,8 +45,7 @@ const Login = () => {
             </div>
             <div className="mt-4 flex items-center justify-between">
               <span className="border-b w-1/4 md:w-1/4"></span>
-              <a href="/Registrar" className="text-xs hover:font-semibold text-green-600 uppercase"
-              onClick={Registrar()}>Sin cuenta? Registrate!</a>
+              <a href="/Registrar" className="text-xs hover:font-semibold text-green-600 uppercase">Sin cuenta? Registrate!</a>
               <span className="border-b w-1/5 md:w-1/4"></span>
             </div>
           </div>
