@@ -1,10 +1,9 @@
 import Footer from "../layout/Footer";
-import Heder from "../layout/Header";
+import Heder from "../layout/Heder";
 
 function Nosotros() {
   return (
     <>
-      <Heder />
 
       <div className="container mx-auto py-8 h-screen background-image bg-cover">
         <div className="flex flex-col text-center gap-4 mb-8 p-4">
