@@ -35,10 +35,10 @@ const Faq = () => {
   ];
 
   return (
-    <div className="w-full bg-gray-50 bg-cover" >
+    <div className="w-full bg-gray-50 bg-cover" style={{ backgroundImage: "url('https://www.ecovidrio.es/sites/default/files/2019-10/background-home-1.png')" }}>
       {/* :TITLE & IMAGE */}
       <div className="my-8 mx-auto max-w-4xl flex flex-col items-center">
-        <img src="/img/faq.png" alt="Frequently Asked Questions" className="w-full h-full" />
+        <img src="/img/ecovidrio-bg-inv.jpg" alt="Frequently Asked Questions" className="w-full h-full" />
         <h2 className="text-center text-2xl sm:text-4xl text-teal-600 tracking-widest">Preguntas frecuentes</h2>
       </div>
 
