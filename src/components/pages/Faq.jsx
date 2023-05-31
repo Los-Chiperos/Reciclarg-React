@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import eco from "../img/ecovidrio-bg-inv.jpg";
+import FaqImage from "../img/Faq.jpeg";
 
 const Faq = () => {
   const [openAccordion, setOpenAccordion] = useState(null);
@@ -36,7 +36,7 @@ const Faq = () => {
   ];
 
   return (
-    <div className="w-full bg-gray-50 bg-cover" style={{ backgroundImage: `url(${eco})`}}>
+    <div className="w-full bg-gray-50 bg-cover" style={{ backgroundImage: `url(${FaqImage})`}}>
       {/* :TITLE & IMAGE */}
       <div className="my-8 mx-auto max-w-4xl flex flex-col items-center">
         <img src="/img/ecovidrio-bg-inv.jpg" alt="Frequently Asked Questions" className="w-full h-full" />
