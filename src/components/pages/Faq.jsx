@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import FaqImage from "../img/Faq.jpeg";
+import FaqImage from "../img/Faq.png";
 import FaqBackground from "../img/background-5.jpeg";
 
 const Faq = () => {
