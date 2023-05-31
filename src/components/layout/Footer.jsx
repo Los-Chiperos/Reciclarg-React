@@ -7,7 +7,7 @@ function Footer() {
       <div className="flex flex-wrap justify-center -mx-5 -my-2">
         <div className="px-5 py-2">
           <a
-            href="/"
+            href="/Nosotros"
             className="text-base leading-6 text-amber-100 hover:text-amber-100"
           >
             About
