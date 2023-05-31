@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas Frecuentes</title>
+<body>
+<style>
+  html {
+
+
+    font-family: "Montserrat", sans-serif;
+    /* font-weight: 500; */
+  
+  }
+</style>
+    <div class="w-full bg-gray-50 bg-cover" style="background-image: url('https://www.ecovidrio.es/sites/default/files/2019-10/background-home-1.png')">
+
+        <!-- :TITLE & IMAGE -->
+        <div class="my-8 mx-auto max-w-4xl flex flex-col items-center">
+          <img src="/img/faq.png" alt="Frequently Asked Questions" class="w-full h-full" />
+          <h2 class="text-center text-2xl sm:text-4xl text-teal-600 tracking-widest">Preguntas frecuentes</h2>
+        </div>
+      
+        <!-- :FAQ -->
+        <dl class="mx-auto mb-10 p-2 max-w-4xl flex flex-col items-center">
+          <!-- ::Accordion Panel -->
+          <div x-data="{ open: false }">
+            <!-- Question 1 -->
+            <div class="w-full border-b-2 border-sky-600 text-teal-600 hover:bg-amber-100 hover:text-teal-600" :class="{ 'bg-teal-600 text-amber-100': open }">
+              <button @click="open = !open" class="py-5 px-3 w-full flex justify-between items-center">
+                <span class="text-lg md:text-xl text-left font-semibold">¿Qué tipo de vidrio puedo reciclar?</span>
+                <svg x-bind:class="{ 'transform rotate-180 text-white': open }" class="flex-shrink-0 ml-2 w-7 h-7 text-sky-600 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+            </div>
+            <!-- Answer 1 -->
+            <div x-show="open" class="w-full text-base text-gray-500 px-4 pt-4 pb-2">
+                Puedes reciclar botellas, frascos, envases y cualquier tipo de vidrio no laminado. El vidrio reciclado se utiliza para fabricar nuevos envases de vidrio, aislantes, materiales de construcción y más.
+            </div>
+          </div>
+      
+          <!-- Repeat the above structure for other FAQs -->
+          <div x-data="{ open: false }">
+            <!-- Question 1 -->
+            <div class="w-full border-b-2 border-sky-600 text-teal-600 hover:bg-amber-100 hover:text-teal-600" :class="{ 'bg-teal-600 text-amber-100': open }">
+              <button @click="open = !open" class="py-5 px-3 w-full flex justify-between items-center">
+                <span class="text-lg md:text-xl text-left font-semibold">¿Cómo debo preparar el cartón para reciclarlo?</span>
+                <svg x-bind:class="{ 'transform rotate-180 text-white': open }" class="flex-shrink-0 ml-2 w-7 h-7 text-sky-600 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+            </div>
+            <!-- Answer 1 -->
+            <div x-show="open" class="w-full text-base text-gray-500 px-4 pt-4 pb-2">
+                Para reciclar cartón, debes quitar cualquier cinta adhesiva o etiqueta. Además, asegúrate de que el cartón esté limpio y seco. Puedes descomponer las cajas de cartón grandes y aplastarlas para ahorrar espacio en los contenedores de reciclaje.
+            </div>
+          </div>
+      
+          <div x-data="{ open: false }">
+            <!-- Question 1 -->
+            <div class="w-full border-b-2 border-sky-600 text-teal-600 hover:bg-amber-100 hover:text-teal-600" :class="{ 'bg-teal-600 text-amber-100': open }">
+              <button @click="open = !open" class="py-5 px-3 w-full flex justify-between items-center">
+                <span class="text-lg md:text-xl text-left font-semibold"> ¿Qué tipo de plástico se puede reciclar?</span>
+                <svg x-bind:class="{ 'transform rotate-180 text-white': open }" class="flex-shrink-0 ml-2 w-7 h-7 text-sky-600 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+            </div>
+            <!-- Answer 1 -->
+            <div x-show="open" class="w-full text-base text-gray-500 px-4 pt-4 pb-2">
+                Se pueden reciclar botellas de plástico, envases de alimentos, envoltorios de plástico y otros productos de plástico marcados con el símbolo de reciclaje. Sin embargo, evita reciclar plásticos laminados o contaminados con sustancias químicas.
+            </div>
+          </div>
+      
+          <div x-data="{ open: false }">
+            <!-- Question 1 -->
+            <div class="w-full border-b-2 border-sky-600 text-teal-600 hover:bg-amber-100 hover:text-teal-600" :class="{ 'bg-teal-600 text-amber-100': open }">
+              <button @click="open = !open" class="py-5 px-3 w-full flex justify-between items-center">
+                <span class="text-lg md:text-xl text-left font-semibold">¿Qué hacer con los objetos de vidrio rotos?</span>
+                <svg x-bind:class="{ 'transform rotate-180 text-white': open }" class="flex-shrink-0 ml-2 w-7 h-7 text-sky-600 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+            </div>
+            <!-- Answer 1 -->
+            <div x-show="open" class="w-full text-base text-gray-500 px-4 pt-4 pb-2">
+                Los objetos de vidrio rotos deben manejarse con cuidado. Colócalos en contenedor de Vidrio. No los mezcles con otros materiales reciclables. Siempre utiliza guantes o herramientas adecuadas al manipular vidrio roto.
+            </div>
+          </div>
+      
+
+          <div x-data="{ open: false }">
+            <!-- Question 1 -->
+            <div class="w-full border-b-2 border-sky-600 text-teal-600 hover:bg-amber-100 hover:text-teal-600":class="{ 'bg-teal-600 text-amber-100': open }">
+              <button @click="open = !open" class="py-5 px-3 w-full flex justify-between items-center">
+                <span class="text-lg md:text-xl text-left font-semibold">¿Cómo puedo encontrar contenedores de reciclaje cercanos?</span>
+                <svg x-bind:class="{ 'transform rotate-180 text-white': open }" class="flex-shrink-0 ml-2 w-7 h-7 text-sky-600 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+            </div>
+            <!-- Answer 1 -->
+            <div x-show="open" class="w-full text-base text-gray-500 px-4 pt-4 pb-2">
+              Dentro de nuestra pagina tenes un apartado en el cual vas a encontrar los contenedores más cercanos, lo unico que tenes que hacer es brindar tu ubicación actual y te brindara el contenedor más cercano. También puedes consultar con tu municipio o autoridades locales para obtener información sobre los centros de reciclaje cercanos. 
+            </div>
+          </div>
+      
+          
+        </dl>
+      
+      </div>
+
+</body>
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+</html>

@@ -4,6 +4,7 @@ import Login from "../pages/Login";
 import Registrar from "../pages/Registrar";
 import Pruebita from "../Home/Pruebita";
 import Nosotros from "../pages/Nosotros";
+import Huella from "../pages/Huella";
 
 function Heder() {
   const [showMenu, setShowMenu] = useState(false);
@@ -46,10 +47,10 @@ function Heder() {
                   Nosotros
                 </a>
                 <a
-                  href=""
+                  href="/Huella"
                   className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
                 >
-                  recompensas
+                  Calcula tu huella de carbono
                 </a>
                 <a
                   href=""

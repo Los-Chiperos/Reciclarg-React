@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8"
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.6/dist/full.css" rel="stylesheet" type="text/css" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="https://reciclarg.cloud/cesto.png" type="image/x-icon">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css'>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.6/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Agrega los enlaces a los estilos de Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="px-2">
+    <header class="text-teal-py-4 bg-teal-600 px-2 ">
+  
+      <div class="container mx-auto px-4 py-4 px-6 bg-green">
+        <h1 class="text-amber-100 text-3xl font-bold text-center items-center items-center">Calculadora de Carbono</h1>
+  
+</body>
+
+      </div>
+    </header>
+    <!--Quitar boton de contador en input  -->
+    <style>
+      input[type=number]::-webkit-outer-spin-button,
+      input[type=number]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+  
+      input[type=number] {
+        -moz-appearance: textfield;
+        
+      }
+
+    </style>
+
+    <section>
+      <!-- Contenedor del popup -->
+      <div id="popupContainer" class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50">
+        <!-- Popup -->
+        <div class="relative z-20 flex items-center overflow-hidden bg-white">
+          <div class="container relative flex px-6 py-16 mx-auto">
+            <div class="relative z-20 flex flex-col sm:w-2/3 lg:w-2/5">
+   <span class="w-20 h-2 mb-12 bg-teal-600  "></span>
+
+
+              <h1 class="flex flex-col text-6xl font-black leading-none text-green-500 py-1 uppercase font-bebas-neue sm:text-8xl">
+                TU
+                <span class="text-5xl sm:text-7xl py-2 text-teal-600">
+                  TURNO
+                  
+                </span>
+              </h1>
+              <p class="text-sm text-gray-700 sm:text-base">
+              Es hora de que puedas calcular tu huella de carbono y saber cuánto estás contaminando el planeta.
+              A Continuación te presentamos una calculadora de carbono por Mes, la cual te permitirá saber cuánto CO2 estás emitiendo a la atmósfera.
+              </p>
+              <div class="flex mt-8">
+                <a href="#" id="closePopup" class=" font-bold px-4 py-2 mr-4 text-amber-100 bg-teal-600 ppercase bg-500} border-2 border-transparent rounded-lg text-md hover:bg-amber-100 hover:text-teal-600 hover:no-underline ">
+                  Cerrar
+                </a>
+              </div>
+            </div>
+            <div class="relative hidden sm:block sm:w-1/3 lg:w-3/5">
+              <img src="/img/hero.png" class="max-w-xs m-auto md:max-w-2xl" />
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Contenedor del menú principal -->
+      <div id="mainMenu" class="relative">
+      </div>
+    
+      <!-- Scripts -->
+      <script>
+        const closePopupButton = document.getElementById('closePopup');
+        const popupContainer = document.getElementById('popupContainer');
+        const mainMenu = document.getElementById('mainMenu');
+        const card = document.getElementById('card');
+    
+        closePopupButton.addEventListener('click', () => {
+          popupContainer.style.display = 'none';
+          mainMenu.classList.remove('filter', 'blur-sm');
+          card.classList.remove('filter', 'blur-sm');
+        });
+    
+        window.addEventListener('DOMContentLoaded', () => {
+          popupContainer.style.display = 'flex';
+          mainMenu.classList.add('filter', 'blur-sm');
+          card.classList.add('filter', 'blur-sm');
+        });
+      </script>
+<div class="content" 
+style=" background-image: url('/img/background-2.png') ">
+
+  <main class="container mx-auto px-4 py-8">
+<!-- Form inicio -->
+    <form class=" shadow-md rounded px-8 pt-6 pb-8 mb-4 border " style=" background-image: url('img/ecovidrio-bg-inv.jpg') ">
+      
+            <div class="mb-4  ">
+        <label class="block text-teal-600 text-sm  font-bold mb-2" for="glass">Cantidad de vidrio reciclado por mes (kg)</label>
+        <input class="shadow bg-white appearance-none border rounded w-full py-2 px-3 text-teal-600 leading-tight focus:outline-none focus:shadow-outline"
+          id="glass" type="number" placeholder="Ingrese la cantidad de vidrio reciclado por mes" min="0">
+      </div>
+      <div class="mb-4">
+        <label class="block text-teal-600 text-sm font-bold mb-2" for="plastic">Cantidad de plástico reciclado por mes (kg)</label>
+        <input class="shadow appearance-none bg-white border rounded w-full py-2 px-3 text-teal-600 leading-tight focus:outline-none focus:shadow-outline"
+          id="plastic" type="number" placeholder="Ingrese la cantidad de plástico reciclado por mes" min="0">
+      </div>
+      <div class="mb-4">
+        <label class="block text-teal-600 text-sm font-bold mb-2" for="cardboard">Cantidad de cartón reciclado por mes (kg)</label>
+        <input class="shadow appearance-none border bg-white rounded w-full py-2 px-3 text-teal-600 leading-tight focus:outline-none focus:shadow-outline"
+          id="cardboard" type="number" placeholder="Ingrese la cantidad de cartón reciclado por mes" min="0">
+      </div>
+      <div class="mb-4">
+        <label class="block text-teal-600 text-sm font-bold mb-2" for="electricity">Consumo de electricidad por mes (kWh)</label>
+        <input class="shadow appearance-none border bg-white rounded w-full py-2 px-3 text-teal-600 leading-tight focus:outline-none focus:shadow-outline"
+          id="electricity" type="number" placeholder="Ingrese el consumo de electricidad por mes" min="0">
+      </div>
+      <div class="mb-4">
+        <label class="block text-teal-600 text-sm font-bold mb-2" for="water">Consumo de agua por mes (litros)</label>
+        <input class="shadow appearance-none border bg-white rounded w-full py-2 px-3 text-teal-600 leading-tight focus:outline-none focus:shadow-outline"
+          id="water" type="number" placeholder="Ingrese el consumo de agua por mes" min="0">
+      </div>
+
+      <div class="flex items-center justify-between mb-4">
+        <button class="bg-teal-600  hover:bg-amber-100 bg hover:text-teal-600 text-amber-100 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          id="calculateBtn" type="button">
+          Calcular
+        </button>
+        <a class="inline-block align-baseline font-bold text-sm text-teal-600 hover:text-amber-600 hover:no-underline" id="infoBtn" href="#">Más información</a>
+      </div>
+    </form>
+    <div class="p-4 rounded teal-600 bg-amber-100"">
+      <h3 class="text-lg font-bold mb-2 text-teal-600">Resultado:</h3>
+      <p class="text-teal-600 bg-amber-100 font-semibold" id="resultText"></p>
+    </div>
+  </main>
+
+  <div class="hidden fixed inset-0 z-50 overflow-auto bg-black bg-opacity-50 " id="modal">
+    <div class="relative w-auto my-6 mx-auto max-w-3xl">
+      <!-- Contenido del modal -->
+      <div class="bg-amber-100 rounded  shadow-lg p-4 text-teal-600">
+        <h2 class="text-lg font-bold mb-2 text-green-500">Información de la huella de carbono</h2>
+        <p class="text-teal-600 font-semibold">Aquí puedes encontrar información adicional sobre la huella de carbono y cómo se calcula.</p>
+        <h4 class="text-lg font-bold mt-4 text-green-500">  Niveles de huella de carbono:</h4>
+        <ul class="list-disc font-semibold list-inside text-teal-600">
+          <li><strong>Baja:</strong> La huella de carbono es baja debido a los hábitos de reciclaje sostenibles.</li>
+          <li><strong>Moderada:</strong> La huella de carbono es moderada debido a un consumo de recursos razonable.</li>
+          <li><strong>Alta:</strong> La huella de carbono es alta debido a un consumo excesivo y prácticas insostenibles.</li>
+        </ul>
+        <button class="absolute top-0 right-0 mt-4 mr-4 text-gray-500 hover:text-gray-800" id="closeModalBtn"
+          type="button">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    // Obtener elementos del DOM
+    const calculateBtn = document.getElementById('calculateBtn');
+    const infoBtn = document.getElementById('infoBtn');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const modal = document.getElementById('modal');
+    const resultText = document.getElementById('resultText');
+
+    // Agregar eventos de clic a los botones
+    calculateBtn.addEventListener('click', calculateCarbonFootprint);
+    infoBtn.addEventListener('click', openModal);
+    closeModalBtn.addEventListener('click', closeModal);
+
+    // Función para calcular la huella de carbono
+    function calculateCarbonFootprint() {
+      // Obtener los valores de las preguntas
+      const glass = document.getElementById('glass').value;
+      const plastic = document.getElementById('plastic').value;
+      const cardboard = document.getElementById('cardboard').value;
+      const electricity = document.getElementById('electricity').value;
+      const water = document.getElementById('water').value;
+
+      // Verificar si hay valores vacíos
+      if (glass === "" || plastic === "" || cardboard === "" || electricity === "" || water === "") {
+        resultText.textContent = "Por favor, complete todos los campos antes de calcular.";
+        return;
+      }
+
+      // Realizar los cálculos
+      const carbonFootprint = parseFloat(glass) * 0.5 + parseFloat(plastic) * 1.2 + parseFloat(cardboard) * 0.8 +
+        parseFloat(electricity) * 0.3 + parseFloat(water) * 0.2;
+
+      // Generar el resultado
+      let resultDescription = '';
+      if (carbonFootprint <= 10) {
+        resultDescription = 'Tu huella de carbono es baja. Esto se debe a tus hábitos sostenibles de reciclaje y consumo responsable.';
+      } else if (carbonFootprint <= 20) {
+        resultDescription = 'Tu huella de carbono es moderada. Puedes reducir aún más tu impacto adoptando prácticas de consumo más sostenibles.';
+      } else {
+        resultDescription = 'Tu huella de carbono es alta. Esto se debe a un consumo excesivo y prácticas insostenibles. Es importante tomar medidas para reducir tu impacto ambiental.';
+      }
+
+      // Actualizar el resultado en el DOM
+      resultText.textContent = resultDescription;
+    }
+
+    // Función para abrir el modal
+    function openModal() {
+      modal.classList.remove('hidden');
+    }
+
+    // Función para cerrar el modal
+    function closeModal() {
+      modal.classList.add('hidden');
+    }
+  </script>
+  <style>
+
+.animated-line {
+  animation: fillLine 2s ease-in-out infinite;
+}
+
+@keyframes fillLine {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+  </style>
+  </section>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+
+</html>
