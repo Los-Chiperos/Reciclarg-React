@@ -23,11 +23,11 @@ function Nosotros() {
           </div>
         </div>
 
-        <div className="flex items-center justify-center flex-wrap gap-4 p-4">
+        <div className="flex items-center justify-center sm:grid-cols-4 md:grid-cols-2 flex-wrap gap-2 px-12">
           <div className="card bg-amber-100">
             <img
               src="./pofile.jpeg"
-              className="w-24 h-24 rounded-full object-cover transition duration-200 hover:scale-110"
+              className="w-24 h-24  rounded-full object-cover transition duration-200 hover:scale-110"
             />
             <div className="text-gray-900 text-lg font-bold">
               Nicolas Zelarayan
