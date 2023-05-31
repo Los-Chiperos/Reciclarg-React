@@ -43,6 +43,140 @@ function Nosotros() {
           </div>
 
           {/* Repite el código anterior para cada miembro del equipo */}
+          <div className="card bg-amber-100">
+            <img
+              src="./pofile.jpeg"
+              className="w-24 h-24  rounded-full object-cover transition duration-200 hover:scale-110"
+            />
+            <div className="text-gray-900 text-lg font-bold">
+              Nicolas Zelarayan
+            </div>
+            <div className="text-green-600 font-semibold">DevOps Engineer</div>
+            <div className="text-gray-600" style={{ textAlign: "center" }}>
+              Cloud Architect Designing Scalable and Resilient Solutions.
+            </div>
+            <div className="flex items-center justify-center gap-3 mt-2 w-auto h-5 text-gray-600">
+              <i className="fa-brands fa-twitter fa-lg cursor-pointer transition duration-200 hover:text-green-600"></i>
+              <i className="fa-brands fa-linkedin fa-lg cursor-pointer transition duration-200 hover:text-green-600"></i>
+              <i className="fa-brands fa-github fa-lg cursor-pointer transition duration-200 hover:text-green-600"></i>
+            </div>
+          </div>
+
+          <div className="card bg-amber-100">
+            <img
+              src="./pofile.jpeg"
+              className="w-24 h-24  rounded-full object-cover transition duration-200 hover:scale-110"
+            />
+            <div className="text-gray-900 text-lg font-bold">
+              Nicolas Zelarayan
+            </div>
+            <div className="text-green-600 font-semibold">DevOps Engineer</div>
+            <div className="text-gray-600" style={{ textAlign: "center" }}>
+              Cloud Architect Designing Scalable and Resilient Solutions.
+            </div>
+            <div className="flex items-center justify-center gap-3 mt-2 w-auto h-5 text-gray-600">
+              <i className="fa-brands fa-twitter fa-lg cursor-pointer transition duration-200 hover:text-green-600"></i>
+              <i className="fa-brands fa-linkedin fa-lg cursor-pointer transition duration-200 hover:text-green-600"></i>
+              <i className="fa-brands fa-github fa-lg cursor-pointer transition duration-200 hover:text-green-600"></i>
+            </div>
+          </div>
+
+          <div className="card bg-amber-100">
+            <img
+              src="./pofile.jpeg"
+              className="w-24 h-24  rounded-full object-cover transition duration-200 hover:scale-110"
+            />
+            <div className="text-gray-900 text-lg font-bold">
+              Nicolas Zelarayan
+            </div>
+            <div className="text-green-600 font-semibold">DevOps Engineer</div>
+            <div className="text-gray-600" style={{ textAlign: "center" }}>
+              Cloud Architect Designing Scalable and Resilient Solutions.
+            </div>
+            <div className="flex items-center justify-center gap-3 mt-2 w-auto h-5 text-gray-600">
+              <i className="fa-brands fa-twitter fa-lg cursor-pointer transition duration-200 hover:text-green-600"></i>
+              <i className="fa-brands fa-linkedin fa-lg cursor-pointer transition duration-200 hover:text-green-600"></i>
+              <i className="fa-brands fa-github fa-lg cursor-pointer transition duration-200 hover:text-green-600"></i>
+            </div>
+          </div>
+
+          <div className="card bg-amber-100">
+            <img
+              src="./pofile.jpeg"
+              className="w-24 h-24  rounded-full object-cover transition duration-200 hover:scale-110"
+            />
+            <div className="text-gray-900 text-lg font-bold">
+              Nicolas Zelarayan
+            </div>
+            <div className="text-green-600 font-semibold">DevOps Engineer</div>
+            <div className="text-gray-600" style={{ textAlign: "center" }}>
+              Cloud Architect Designing Scalable and Resilient Solutions.
+            </div>
+            <div className="flex items-center justify-center gap-3 mt-2 w-auto h-5 text-gray-600">
+              <i className="fa-brands fa-twitter fa-lg cursor-pointer transition duration-200 hover:text-green-600"></i>
+              <i className="fa-brands fa-linkedin fa-lg cursor-pointer transition duration-200 hover:text-green-600"></i>
+              <i className="fa-brands fa-github fa-lg cursor-pointer transition duration-200 hover:text-green-600"></i>
+            </div>
+          </div>
+
+          <div className="card bg-amber-100">
+            <img
+              src="./pofile.jpeg"
+              className="w-24 h-24  rounded-full object-cover transition duration-200 hover:scale-110"
+            />
+            <div className="text-gray-900 text-lg font-bold">
+              Nicolas Zelarayan
+            </div>
+            <div className="text-green-600 font-semibold">DevOps Engineer</div>
+            <div className="text-gray-600" style={{ textAlign: "center" }}>
+              Cloud Architect Designing Scalable and Resilient Solutions.
+            </div>
+            <div className="flex items-center justify-center gap-3 mt-2 w-auto h-5 text-gray-600">
+              <i className="fa-brands fa-twitter fa-lg cursor-pointer transition duration-200 hover:text-green-600"></i>
+              <i className="fa-brands fa-linkedin fa-lg cursor-pointer transition duration-200 hover:text-green-600"></i>
+              <i className="fa-brands fa-github fa-lg cursor-pointer transition duration-200 hover:text-green-600"></i>
+            </div>
+          </div>
+
+          <div className="card bg-amber-100">
+            <img
+              src="./pofile.jpeg"
+              className="w-24 h-24  rounded-full object-cover transition duration-200 hover:scale-110"
+            />
+            <div className="text-gray-900 text-lg font-bold">
+              Nicolas Zelarayan
+            </div>
+            <div className="text-green-600 font-semibold">DevOps Engineer</div>
+            <div className="text-gray-600" style={{ textAlign: "center" }}>
+              Cloud Architect Designing Scalable and Resilient Solutions.
+            </div>
+            <div className="flex items-center justify-center gap-3 mt-2 w-auto h-5 text-gray-600">
+              <i className="fa-brands fa-twitter fa-lg cursor-pointer transition duration-200 hover:text-green-600"></i>
+              <i className="fa-brands fa-linkedin fa-lg cursor-pointer transition duration-200 hover:text-green-600"></i>
+              <i className="fa-brands fa-github fa-lg cursor-pointer transition duration-200 hover:text-green-600"></i>
+            </div>
+          </div>
+
+          <div className="card bg-amber-100">
+            <img
+              src="./pofile.jpeg"
+              className="w-24 h-24  rounded-full object-cover transition duration-200 hover:scale-110"
+            />
+            <div className="text-gray-900 text-lg font-bold">
+              Nicolas Zelarayan
+            </div>
+            <div className="text-green-600 font-semibold">DevOps Engineer</div>
+            <div className="text-gray-600" style={{ textAlign: "center" }}>
+              Cloud Architect Designing Scalable and Resilient Solutions.
+            </div>
+            <div className="flex items-center justify-center gap-3 mt-2 w-auto h-5 text-gray-600">
+              <i className="fa-brands fa-twitter fa-lg cursor-pointer transition duration-200 hover:text-green-600"></i>
+              <i className="fa-brands fa-linkedin fa-lg cursor-pointer transition duration-200 hover:text-green-600"></i>
+              <i className="fa-brands fa-github fa-lg cursor-pointer transition duration-200 hover:text-green-600"></i>
+            </div>
+          </div>
+
+          
           
         </div>
       </div>
