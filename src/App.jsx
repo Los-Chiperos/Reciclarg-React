@@ -6,10 +6,9 @@ import Eror from "./components/pages/Eror";
 import Registrar from "./components/pages/Registrar";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Login from "./components/pages/Login";
-import Nosotr from "./components/pages/Nosotros";
+import Nosotros from "./components/pages/Nosotros";
 import Huella from "./components/pages/Huella";
 import Faq from "./components/pages/Faq";
-import Nosotros from "./components/pages/Nosotros";
 
 function App() {
   return (
