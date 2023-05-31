@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Login from "../pages/Login";
 import Registrar from "../pages/Registrar";
 import Pruebita from "../Home/Pruebita";
+import Nosotros from "../pages/Nosotros";
 
 function Heder() {
   const [showMenu, setShowMenu] = useState(false);
