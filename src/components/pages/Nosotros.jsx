@@ -4,7 +4,6 @@ import Heder from "../layout/Heder";
 function Nosotros() {
   return (
 <>
-        <Heder/>
       <div>
       <div
         className="container mx-auto py-8 h-screen background-image bg-cover"
@@ -48,7 +47,6 @@ function Nosotros() {
         </div>
       </div>
     </div>
-    <Footer/>
         </>
   );
 }
