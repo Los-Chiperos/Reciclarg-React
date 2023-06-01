@@ -59,7 +59,7 @@ const Login = () => {
   console.log('username:', username);
   console.log('password:', password);
     try {
-      const response = await axios.post('https://api.reciclarg.cloud/auth/', {
+      const response = await axios.post('https://api.reciclarg.cloud/auth', {
         username: username,
         password: password
       });
