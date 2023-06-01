@@ -68,10 +68,10 @@ const handleRegister = async () => {
   const nombre = document.getElementById('nombre').value;
   const apellido = document.getElementById('apellido').value;
   const username = document.getElementById('username').value;
-  const contraseña = document.getElementById('contraseña').value;
+  const password = document.getElementById('password').value;
   const repetirContraseña = document.getElementById('repetirContraseña').value;
 
-  if (contraseña !== repetirContraseña) {
+  if (password !== repetirContraseña) {
     alert('Las contraseñas no coinciden');
     return;
   }
@@ -81,7 +81,7 @@ const handleRegister = async () => {
       nombre: nombre,
       apellido: apellido,
       userame: username,
-      contraseña: contraseña,
+      password: password,
     });
 
     if (response.status === 200) {
