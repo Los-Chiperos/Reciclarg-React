@@ -80,7 +80,7 @@ const handleRegister = async () => {
     const response = await axios.post('https://api.reciclarg.cloud/users', {
       nombre: nombre,
       apellido: apellido,
-      userame: username,
+      username: username,
       password: password,
     });
 
