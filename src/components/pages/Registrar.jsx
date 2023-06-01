@@ -33,7 +33,7 @@ function Registrar() {
           </div>
           <div className="mt-4">
             <label className="block text-green-600 text-sm font-bold mb-2">Email</label>
-            <input className="bg-amber-100 text-green-600 focus:outline-none focus:shadow-outline border border-green-600 rounded py-2 px-4 block w-full appearance-none" type="email" id='email'/>
+            <input className="bg-amber-100 text-green-600 focus:outline-none focus:shadow-outline border border-green-600 rounded py-2 px-4 block w-full appearance-none" type="email" id='username'/>
           </div>
           <div className="mt-4">
             <div className="flex justify-between">
@@ -67,7 +67,7 @@ function Registrar() {
 const handleRegister = async () => {
   const nombre = document.getElementById('nombre').value;
   const apellido = document.getElementById('apellido').value;
-  const email = document.getElementById('email').value;
+  const username = document.getElementById('username').value;
   const contraseña = document.getElementById('contraseña').value;
   const repetirContraseña = document.getElementById('repetirContraseña').value;
 
@@ -80,7 +80,7 @@ const handleRegister = async () => {
     const response = await axios.post('https://api.reciclarg.cloud/users', {
       nombre: nombre,
       apellido: apellido,
-      userame: email,
+      userame: username,
       contraseña: contraseña,
     });
 
