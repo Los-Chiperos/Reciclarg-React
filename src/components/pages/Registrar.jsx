@@ -84,7 +84,7 @@ const handleRegister = async () => {
       password: password,
     });
 console.log(response.status)
-    if (response.status === 200) {
+  if (response.data === 'Usuario creado exitosamente') {
       alert('Registro exitoso');
       // Redirige a otra página o realiza alguna acción adicional
     } else {
