@@ -83,7 +83,7 @@ const handleRegister = async () => {
       username: username,
       password: password,
     });
-
+console.log(response.status)
     if (response.status === 200) {
       alert('Registro exitoso');
       // Redirige a otra página o realiza alguna acción adicional
