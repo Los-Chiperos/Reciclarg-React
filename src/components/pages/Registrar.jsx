@@ -88,7 +88,7 @@ const handleRegister = async () => {
       alert('Registro exitoso');
       // Redirige a otra página o realiza alguna acción adicional
     } else {
-      alert('Error en el registro');
+      alert('No se pudo generar el registro');
     }
   } catch (error) {
     alert('Error en el registro');
