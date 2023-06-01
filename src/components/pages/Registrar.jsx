@@ -1,5 +1,6 @@
 import React from 'react';
 import Login from './Login';
+import axios from 'axios';
 
 function Registrar() {
   return (
@@ -83,7 +84,7 @@ const handleRegister = async () => {
       username: username,
       password: password,
     });
-console.log(response.status)
+console.log(response.data)
   if (response.data === 'Usuario creado exitosamente') {
       alert('Registro exitoso');
       // Redirige a otra página o realiza alguna acción adicional
