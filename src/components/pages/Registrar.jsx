@@ -24,29 +24,33 @@ function Registrar() {
             <h1 className="text-amber-100 px-4 py-3 w-5/6 bg-green-600 text-center hover:text-green-600 hover:bg-amber-100 font-bold hover:transition-duration: 75ms">Registrate con Google</h1>
           </a>
           <div className="mt-4">
-            <label className="block text-green-600 text-sm font-bold mb-2">Nombre y apellido</label>
-            <input className="bg-amber-100 text-green-600 focus:outline-none focus:shadow-outline border border-green-600 rounded py-2 px-4 block w-full appearance-none" type="text" />
+            <label className="block text-green-600 text-sm font-bold mb-2">Nombre</label>
+            <input className="bg-amber-100 text-green-600 focus:outline-none focus:shadow-outline border border-green-600 rounded py-2 px-4 block w-full appearance-none" type="text" id='nombre'/>
+          </div>
+          <div className="mt-4">
+            <label className="block text-green-600 text-sm font-bold mb-2">Apellido</label>
+            <input className="bg-amber-100 text-green-600 focus:outline-none focus:shadow-outline border border-green-600 rounded py-2 px-4 block w-full appearance-none" type="text" id='apellido'/>
           </div>
           <div className="mt-4">
             <label className="block text-green-600 text-sm font-bold mb-2">Email</label>
-            <input className="bg-amber-100 text-green-600 focus:outline-none focus:shadow-outline border border-green-600 rounded py-2 px-4 block w-full appearance-none" type="email" />
+            <input className="bg-amber-100 text-green-600 focus:outline-none focus:shadow-outline border border-green-600 rounded py-2 px-4 block w-full appearance-none" type="email" id='email'/>
           </div>
           <div className="mt-4">
             <div className="flex justify-between">
               <label className="block text-green-600 text-sm font-bold mb-2">Contraseña</label>
               <a href="#" className="text-xs text-text-green-600"></a>
             </div>
-            <input className="bg-amber-100 text-green-600 focus:outline-none focus:shadow-outline border border-green-600 rounded py-2 px-4 block w-full appearance-none" type="password" />
+            <input className="bg-amber-100 text-green-600 focus:outline-none focus:shadow-outline border border-green-600 rounded py-2 px-4 block w-full appearance-none" type="password" id='password'/>
             <br />
           </div>
           <div className="flex justify-between">
             <label className="block text-green-600 text-sm font-bold mb-2">Repetir contraseña</label>
             <a href="#" className="text-xs text-green-600"></a>
           </div>
-          <input className="bg-amber-100 text-green-600 focus:outline-none focus:shadow-outline border border-green-600 rounded py-2 px-4 block w-full appearance-none" type="password" />
+          <input className="bg-amber-100 text-green-600 focus:outline-none focus:shadow-outline border border-green-600 rounded py-2 px-4 block w-full appearance-none" type="password" id='repetirpassword'/>
           <br />
           <div className="mt-4">
-            <button className="bg-green-600 text-amber-100 font-bold py-2 transition-duration px-4 w-full rounded hover:bg-amber-100 hover:text-green-600">Ingresar</button>
+            <button className="bg-green-600 text-amber-100 font-bold py-2 transition-duration px-4 w-full rounded hover:bg-amber-100 hover:text-green-600"onClick={handleRegister}>Registrarse</button>
           </div>
           <div className="mt-4 flex items-center justify-between">
             <span className="border-b w-1/5 md:w-1/4"></span>
@@ -59,4 +63,37 @@ function Registrar() {
     </>
   );
 }
+
+const handleRegister = async () => {
+  const nombre = document.getElementById('nombre').value;
+  const apellido = document.getElementById('apellido').value;
+  const email = document.getElementById('email').value;
+  const contraseña = document.getElementById('contraseña').value;
+  const repetirContraseña = document.getElementById('repetirContraseña').value;
+
+  if (contraseña !== repetirContraseña) {
+    alert('Las contraseñas no coinciden');
+    return;
+  }
+
+  try {
+    const response = await axios.post('https://api.reciclarg.cloud/users', {
+      nombre: nombre,
+      apellido: apellido,
+      userame: email,
+      contraseña: contraseña,
+    });
+
+    if (response.status === 200) {
+      alert('Registro exitoso');
+      // Redirige a otra página o realiza alguna acción adicional
+    } else {
+      alert('Error en el registro');
+    }
+  } catch (error) {
+    alert('Error en el registro');
+  }
+};
+
+
 export default Registrar;

@@ -56,8 +56,6 @@ const Login = () => {
   const handleLogin = async () => {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
-  console.log('username:', username);
-  console.log('password:', password);
     try {
       const response = await axios.post('https://api.reciclarg.cloud/auth', {
         username: username,
