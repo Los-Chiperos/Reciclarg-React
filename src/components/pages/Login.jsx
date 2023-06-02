@@ -69,7 +69,7 @@ const Login = () => {
       else if (response.status === 401) {
         alert('Error de autenticación');
       }
-      else if (response.status === 400) {
+      else if (response.status === 402) {
         alert('Ingrese Usuario y Contraseña');
       }
     } catch (error) {
