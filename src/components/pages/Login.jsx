@@ -65,8 +65,12 @@ const Login = () => {
       if (response.status === 200) {
         alert('Autenticación exitosa');
         // Redirige a otra página o realiza alguna acción adicional
-      } else {
+      } 
+      else if (response.status === 401) {
         alert('Error de autenticación');
+      }
+      else if (response.status === 400) {
+        alert('Ingrese Usuario y Contraseña');
       }
     } catch (error) {
       alert('Error de autenticación');
