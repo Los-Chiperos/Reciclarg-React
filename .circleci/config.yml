@@ -14,7 +14,6 @@ jobs:
       - run: docker build -t nicolaszelarayan/reciclarg2023:$CIRCLE_SHA1 .
       - run: docker push nicolaszelarayan/reciclarg2023:$CIRCLE_SHA1
       - run: ssh -o StrictHostKeyChecking=no -t -t nicolas_zelarayan@reciclarg.cloud "cd /home/nicolas_zelarayan/React/Reciclarg-React && sudo git pull"
-      - run: ssh -o StrictHostKeyChecking=no -t -t nicolas_zelarayan@reciclarg.cloud "cd /home/nicolas_zelarayan/React/Reciclarg-React && sudo docker build -t nicolaszelarayan/reciclarg2023:$CIRCLE_SHA1 -f Dockerfile ."
       - run: ssh -o StrictHostKeyChecking=no -t -t nicolas_zelarayan@reciclarg.cloud "sudo docker stop reciclarg_container || true"
       - run: ssh -o StrictHostKeyChecking=no -t -t nicolas_zelarayan@reciclarg.cloud "sudo docker rm reciclarg_container || true"
       - run: ssh -o StrictHostKeyChecking=no -t -t nicolas_zelarayan@reciclarg.cloud "sudo docker run -p 8082:80 -d --name reciclarg_container nicolaszelarayan/reciclarg2023:$CIRCLE_SHA1"
