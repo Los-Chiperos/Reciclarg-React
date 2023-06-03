@@ -1,9 +1,9 @@
 function Contac (){
     return (
-      <div className="h-screen w-full grid place-items-center bg-slate-100 w-90">
+      <div className="flex h-screen w-full grid place-items-center bg-slate-100 w-90">
         <div className="bg-white rounded-md shadow-md flex flex-row">
           {/* Contact information form */}
-          <div className="bg-green-700 p-10 hover:bg-green-800 rounded-md transition md:block" id="contact_info">
+          <div className="flex bg-green-700 p-10 hover:bg-green-800 rounded-md transition md:block" id="contact_info">
             <div className="flex justify-between">
               <h2 className="text-white text-xl">Contact Information</h2>
               <h2 className="text-white text-xs flex flex-row md:hidden block cursor-pointer" id="swtich_to_contact_us">
