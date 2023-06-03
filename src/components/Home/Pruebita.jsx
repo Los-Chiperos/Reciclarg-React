@@ -2,7 +2,6 @@ import eco from "../img/ecovidrio-bg-inv.jpg";
 import Map from "../pages/Map";
 import Contenedor from "./Contenedor";
 import Contac from "../pages/Contac";
-import fondo from "../img/fondo.svg";
 
 
 function Pruebita() {
@@ -41,9 +40,7 @@ function Pruebita() {
         </button>
       </div>
     </div>
-    <div style={{backgroundImage: `url(${fondo})`}}>
         <Contac/>
-    </div>
    </section>
     );
   }

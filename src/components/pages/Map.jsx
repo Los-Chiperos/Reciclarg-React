@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import markerPin from "../img/location-pin.gif";
+import markerPin from "../img/recycle-bin.png";
 
 const Map = () => {
   useEffect(() => {
