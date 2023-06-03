@@ -7,7 +7,7 @@ import fondo from "../img/fondo.svg";
 
 function Pruebita() {
   return (
-    <section className="shadow-lg" style={{backgroundImage: `url(${fondo})`}}>
+    <section className="shadow-lg">
       <div
         className="h-auto px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16 bg-cover"
         style={{ backgroundImage: `url(${eco})` }}
@@ -41,7 +41,9 @@ function Pruebita() {
         </button>
       </div>
     </div>
+    <div style={{backgroundImage: `url(${fondo})`}}>
         <Contac/>
+    </div>
    </section>
     );
   }
