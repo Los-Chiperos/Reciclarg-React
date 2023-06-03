@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import markerPin from "../img/location-pin.gif";
 
 const Map = () => {
   useEffect(() => {
@@ -49,7 +50,7 @@ const Map = () => {
       ];
 
       const image = {
-        url: 'https://reciclarg.cloud/cesto.png',
+        url: `${markerPin}`
       };
 
       const bounds = new window.google.maps.LatLngBounds();
