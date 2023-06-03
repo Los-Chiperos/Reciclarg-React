@@ -7,7 +7,7 @@ import fondo from "../img/fondo.svg";
 
 function Pruebita() {
   return (
-    <section className="shadow-lg">
+    <section className="shadow-lg" style={{backgroundImage: `url(${fondo})`}}>
       <div
         className="h-auto px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16 bg-cover"
         style={{ backgroundImage: `url(${eco})` }}
@@ -29,7 +29,7 @@ function Pruebita() {
         </div>
       </div>
     <Contenedor/>
-      <div className="container mx-auto relative" style={{backgroundImage: `url(${fondo})`}}>
+      <div className="container mx-auto relative">
       <div id="map" style={{ height: '400px', width: '100%' }}></div>
       <div className="absolute bottom-0 left-0 mb-4 ml-4">
         <Map />
