@@ -37,21 +37,21 @@ const Map = () => {
       }
 
       const markers = [
-        { lat: -34.617438, lng: -68.321647, title: 'Punto ECO #1', desc: 'Punto de reciclaje apto para: vidrio, plástico y metales' },
-        { lat: -34.615361, lng: -68.337249, title: 'Punto ECO #2', desc: 'Punto de reciclaje apto para: vidrio, plástico y metales' },
-        { lat: -34.619537, lng: -68.332456, title: 'Punto ECO #3', desc: 'Punto de reciclaje apto para: vidrio, plástico y metales' },
-        { lat: -34.621273, lng: -68.344097, title: 'Punto ECO #4', desc: 'Punto de reciclaje apto para: vidrio, plástico y metales' },
-        { lat: -34.598896, lng: -68.324633, title: 'Punto ECO #5', desc: 'Punto de reciclaje apto para: vidrio, plástico y metales' },
-        { lat: -34.620728, lng: -68.311871, title: 'Punto ECO #6', desc: 'Punto de reciclaje apto para: vidrio, plástico y metales' },
-        { lat: -34.620015, lng: -68.316056, title: 'Punto ECO #7', desc: 'Punto de reciclaje apto para: vidrio, plástico y metales' },
-        { lat: -34.618579, lng: -68.312804, title: 'Punto ECO #8', desc: 'Punto de reciclaje apto para: vidrio, plástico y metales' },
-        { lat: -34.609064, lng: -68.317628, title: 'Punto ECO #9', desc: 'Punto de reciclaje apto para: vidrio, plástico y metales' },
-        { lat: -34.594653, lng: -68.343803, title: 'Punto ECO #10', desc: 'Punto de reciclaje apto para: vidrio, plástico y metales' },
+        { lat: -34.617438, lng: -68.321647, title: 'Punto ECO #1', desc: 'Punto de reciclaje apto para: vidrio, plástico y metales', image: "url: `${markerPin}`"},
+        { lat: -34.615361, lng: -68.337249, title: 'Punto ECO #2', desc: 'Punto de reciclaje apto para: vidrio, plástico y metales', image: "url: `${markerPin}`"},
+        { lat: -34.615361, lng: -68.337249, title: 'Punto ECO #2', desc: 'Punto de reciclaje apto para: vidrio, plástico y metales', image: "url: `${markerPin}`" },
+        { lat: -34.615361, lng: -68.337249, title: 'Punto ECO #2', desc: 'Punto de reciclaje apto para: vidrio, plástico y metales', image: "url: `${markerPin}`" },
+        { lat: -34.619537, lng: -68.332456, title: 'Punto ECO #3', desc: 'Punto de reciclaje apto para: vidrio, plástico y metales', image: "url: `${markerPin}`" },
+        { lat: -34.621273, lng: -68.344097, title: 'Punto ECO #4', desc: 'Punto de reciclaje apto para: vidrio, plástico y metales', image: "url: `${markerPin}`" },
+        { lat: -34.598896, lng: -68.324633, title: 'Punto ECO #5', desc: 'Punto de reciclaje apto para: vidrio, plástico y metales', image: "url: `${markerPin}`" },
+        { lat: -34.620728, lng: -68.311871, title: 'Punto ECO #6', desc: 'Punto de reciclaje apto para: vidrio, plástico y metales', image: "url: `${markerPin}`" },
+        { lat: -34.620015, lng: -68.316056, title: 'Punto ECO #7', desc: 'Punto de reciclaje apto para: vidrio, plástico y metales', image: "url: `${markerPin}`" },
+        { lat: -34.618579, lng: -68.312804, title: 'Punto ECO #8', desc: 'Punto de reciclaje apto para: vidrio, plástico y metales', image: "url: `${markerPin}`" },
+        { lat: -34.609064, lng: -68.317628, title: 'Punto ECO #9', desc: 'Punto de reciclaje apto para: vidrio, plástico y metales', image: "url: `${markerPin}`" },
+        { lat: -34.594653, lng: -68.343803, title: 'Punto ECO #10', desc: 'Punto de reciclaje apto para: vidrio, plástico y metales', image: "url: `${markerPin}`" },
       ];
 
-      const image = {
-        url: `${markerPin}`
-      };
+
 
       const bounds = new window.google.maps.LatLngBounds();
 
@@ -65,7 +65,7 @@ const Map = () => {
           position: position,
           map: map,
           title: marker.title,
-          icon: image,
+          icon: marker.image,
         });
 
         mapMarker.addListener('click', function () {
