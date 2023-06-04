@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import {redirect} from 'react-router-dom';
+
+
+
 
 const Login = ({ setIsLoggedIn }) => {
   const handleLogin = async () => {
@@ -15,6 +19,7 @@ const Login = ({ setIsLoggedIn }) => {
         alert('Autenticación exitosa');
         // Redirige a otra página o realiza alguna acción adicional
         setIsLoggedIn(true);
+        return <redirect to="/" />;
       } else if (response.status === 401) {
         alert('Error de autenticación');
       } else if (response.status === 402) {

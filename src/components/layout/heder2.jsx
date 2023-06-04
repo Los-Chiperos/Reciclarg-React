@@ -5,7 +5,7 @@ import Registrar from "../pages/Registrar";
 import Pruebita from "../Home/Pruebita";
 import Nosotros from "../pages/Nosotros";
 
-function Heder2({ isLoggedIn }) {
+function Heder2({ isLoggedIn, onLogout, username }) {
   const [showMenu, setShowMenu] = useState(false);
   const handleLogout = () => {
     // Llamar a la función onLogout para cerrar sesión
@@ -86,7 +86,7 @@ function Heder2({ isLoggedIn }) {
             <div className="hidden md:flex items-center space-x-3">
               {isLoggedIn ? (
                 <>
-                  <span className="text-gray-500">Bienvenido, {isLoggedIn}</span>
+                  <span className="text-gray-500">Bienvenido, {username} </span>
                   <Link
                     to="/"  onClick={handleLogout}
                     className="py-2 px-2 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300" 

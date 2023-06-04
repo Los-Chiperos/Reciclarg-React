@@ -11,6 +11,10 @@ import Heder2 from "./components/layout/heder2";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [username, setUsername] = useState("");
+  const handleLogin = (username) => {
+    setIsLoggedIn(true);
+    setUsername(username);};
 
   const handleLogout = () => {
     setIsLoggedIn(false);
@@ -18,7 +22,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Heder2 isLoggedIn={isLoggedIn} onLogout={handleLogout} />
+      <Heder2 isLoggedIn={isLoggedIn} onLogout={handleLogout} username={username} />
       <Routes>
         <Route path="/" element={<Pruebita />} />
         <Route path="/Registrar" element={<Registrar />} />
