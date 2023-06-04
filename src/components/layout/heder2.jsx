@@ -1,13 +1,15 @@
-import { Link, NavLink } from "react-router-dom";
 import React, { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import Login from "../pages/Login";
 import Registrar from "../pages/Registrar";
 import Pruebita from "../Home/Pruebita";
 import Nosotros from "../pages/Nosotros";
 
-function Heder2() {
+function Heder2({ isLoggedIn }) {
   const [showMenu, setShowMenu] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const handleLogout = () => {
+    // Llamar a la función onLogout para cerrar sesión
+    onLogout();}
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
@@ -22,30 +24,28 @@ function Heder2() {
             <div className="flex space-x-7">
               <div>
                 {/* Website Logo */}
-                <a href="#" className="flex items-center py-4 px-2">
+                <Link to="/" className="flex items-center py-4 px-2">
                   <img
                     src="https://w7.pngwing.com/pngs/963/751/png-transparent-test-case-logo-software-testing-engineering-use-case-business-blue-people-innovation.png"
                     alt="Logo"
                     className="h-8 w-8 mr-2"
                   />
-                </a>
+                </Link>
               </div>
               {/* Primary Navbar items */}
               <div className="hidden md:flex items-center space-x-1">
-                <a
-                  href="/"
+                <Link
+                  to="/"
                   className="py-4 px-2 text-green-500 border-b-4 border-green-500 font-semibold"
-                  onClick={Pruebita}
                 >
                   Inicio
-                </a>
-                <a
-                  href="/Nosotros"
+                </Link>
+                <Link
+                  to="/Nosotros"
                   className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
-                  onClick={Nosotros}
                 >
                   Nosotros
-                </a>
+                </Link>
                 <a
                   href="./huellacarbono.html"
                   className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
@@ -71,9 +71,9 @@ function Heder2() {
                     showMenu ? "hidden" : ""
                   }`}
                   fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                 >
@@ -84,25 +84,32 @@ function Heder2() {
             {/* End of Mobile menu button */}
             {/* Secondary Navbar items */}
             <div className="hidden md:flex items-center space-x-3">
-              {!isLoggedIn ? (
+              {isLoggedIn ? (
                 <>
-                  <a
-                    href="/login"
+                  <span className="text-gray-500">Bienvenido, {isLoggedIn}</span>
+                  <Link
+                    to="/"  onClick={handleLogout}
+                    className="py-2 px-2 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300" 
+                  >
+                    Cerrar sesión
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <Link
+                    to="/login"
                     className="py-2 px-2 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300"
-                    onClick={Login}
                   >
                     Loguearse
-                  </a>
-
-                  <a
-                    href="/Registrar"
+                  </Link>
+                  <Link
+                    to="/registrar"
                     className="py-2 px-2 font-medium text-white bg-green-500 rounded hover:bg-green-400 transition duration-300 none"
-                    onClick={Registrar}
                   >
-                    Registarse
-                  </a>
+                    Registrarse
+                  </Link>
                 </>
-              ) : null}
+              )}
             </div>
           </div>
           {/* Mobile Menu open: "block", Menu closed: "hidden" */}
@@ -111,33 +118,30 @@ function Heder2() {
               {!isLoggedIn ? (
                 <>
                   <li>
-                    <a
-                      href="/Registrar"
+                    <Link
+                      to="/registrar"
                       className="text-center block pl-4 text-sm font-semibold text-gray-900 hover:bg-green-500 hover:text-white transition duration-300 py-2"
-                      onClick={Registrar}
                     >
                       Registrarse
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
-                      href="/Login"
+                    <Link
+                      to="/login"
                       className="text-center block pl-4 text-sm font-semibold text-gray-900 hover:bg-green-500 hover:text-white transition duration-300 py-2"
-                      onClick={Login}
                     >
                       Logearse
-                    </a>
+                    </Link>
                   </li>
                 </>
               ) : null}
               <li>
-                <a
-                  href="/"
+                <Link
+                  to="/"
                   className="block pl-4 text-sm font-semibold text-gray-900 hover:bg-green-500 transition hover:text-white duration-300 py-2"
-                  onClick={Pruebita}
                 >
                   Inicio
-                </a>
+                </Link>
               </li>
               <li>
                 <a
