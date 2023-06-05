@@ -14,7 +14,8 @@ function App() {
   const [username, setUsername] = useState("");
   const handleLogin = (username) => {
     setIsLoggedIn(true);
-    setUsername(username);};
+    setUsername(username);
+  };
 
   const handleLogout = () => {
     setIsLoggedIn(false);
@@ -26,7 +27,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Pruebita />} />
         <Route path="/Registrar" element={<Registrar />} />
-        <Route path="/Login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
+        <Route path="/Login" element={<Login onLogin={handleLogin} />} />
         <Route path="/Eror" element={<Eror />} />
         <Route path="/Nosotros" element={<Nosotros />} />
         <Route path="/Faq" element={<Faq />} />
