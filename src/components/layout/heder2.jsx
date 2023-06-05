@@ -16,7 +16,7 @@ function Heder2({ isLoggedIn, onLogout, username }) {
   };
 
   return (
-    <header>
+    <heder2>
       {/* Navbar goes here */}
       <nav className="bg-white shadow-lg px-1">
         <div className="max-w-6xl mx-auto px-4">
@@ -163,7 +163,7 @@ function Heder2({ isLoggedIn, onLogout, username }) {
           </div>
         </div>
       </nav>
-    </header>
+    </heder2>
   );
 }
 
