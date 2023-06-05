@@ -59,30 +59,48 @@ class UserProfile extends React.Component {
     }
 
     render() {
+        const cardStyle = {
+            width: '30rem',
+            margin: '0 auto',
+            padding: '20px',
+            borderRadius: '15px',
+            boxShadow: '0 0 10px rgba(0,0,0,0.15)',
+        };
+        
+        const inputContainerStyle = {
+            marginLeft: '10px',
+        };
+        
         return (
-            <div>
-                <h2>Perfil de Usuario</h2>
-                <div>
+            <div style={cardStyle}>
+                <h2 style={{textAlign: 'center'}}>Perfil de Usuario</h2>
+                <div style={{marginBottom: '10px'}}>
                     <label>
                         Nombre:
-                        {this.state.isEditMode ?
-                            <input name="name" value={this.state.user.name} onChange={this.handleInputChange} /> :
-                            <span>{this.state.user.name}</span>}
+                        <div style={inputContainerStyle}>
+                            {this.state.isEditMode ?
+                                <input name="name" value={this.state.user.name} onChange={this.handleInputChange} /> :
+                                <span>{this.state.user.name}</span>}
+                        </div>
                     </label>
                 </div>
-                <div>
+                <div style={{marginBottom: '10px'}}>
                     <label>
                         Email:
-                        {this.state.isEditMode ?
-                            <input name="email" value={this.state.user.email} onChange={this.handleInputChange} /> :
-                            <span>{this.state.user.email}</span>}
+                        <div style={inputContainerStyle}>
+                            {this.state.isEditMode ?
+                                <input name="email" value={this.state.user.email} onChange={this.handleInputChange} /> :
+                                <span>{this.state.user.email}</span>}
+                        </div>
                     </label>
                 </div>
-                <button onClick={this.toggleEditMode}>
-                    {this.state.isEditMode ? 'Cancelar' : 'Editar'}
-                </button>
-                {this.state.isEditMode &&
-                    <button onClick={this.saveChanges}>Guardar</button>}
+                <div style={{textAlign: 'center'}}>
+                    <button onClick={this.toggleEditMode} style={{marginRight: '10px'}}>
+                        {this.state.isEditMode ? 'Cancelar' : 'Editar'}
+                    </button>
+                    {this.state.isEditMode &&
+                        <button onClick={this.saveChanges}>Guardar</button>}
+                </div>
             </div>
         );
     }
