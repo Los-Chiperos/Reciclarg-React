@@ -1,55 +1,54 @@
 import React from "react";
-import Footer from "../layout/Footer";
-import Heder2 from "../layout/Heder2";
+import profileImg from "../img/profile.png";
 
 const teamMembers = [
   {
     name: "Nicolas Zelarayan",
     role: "DevOps Engineer",
     description: "Cloud Architect Designing Scalable and Resilient Solutions.",
-    imgSrc: "./pofile.jpeg",
+    imgSrc: profileImg,
   },
   {
     name: "Nicolas Zelarayan",
     role: "DevOps Engineer",
     description: "Cloud Architect Designing Scalable and Resilient Solutions.",
-    imgSrc: "./pofile.jpeg",
+    imgSrc: profileImg,
   },
   {
     name: "Nicolas Zelarayan",
     role: "DevOps Engineer",
     description: "Cloud Architect Designing Scalable and Resilient Solutions.",
-    imgSrc: "./pofile.jpeg",
+    imgSrc: profileImg,
   },
   {
     name: "Nicolas Zelarayan",
     role: "DevOps Engineer",
     description: "Cloud Architect Designing Scalable and Resilient Solutions.",
-    imgSrc: "./pofile.jpeg",
+    imgSrc: profileImg,
   },
   {
     name: "Nicolas Zelarayan",
     role: "DevOps Engineer",
     description: "Cloud Architect Designing Scalable and Resilient Solutions.",
-    imgSrc: "./pofile.jpeg",
+    imgSrc: profileImg,
   },
   {
     name: "Nicolas Zelarayan",
     role: "DevOps Engineer",
     description: "Cloud Architect Designing Scalable and Resilient Solutions.",
-    imgSrc: "./pofile.jpeg",
+    imgSrc: profileImg,
   },
   {
     name: "Nicolas Zelarayan",
     role: "DevOps Engineer",
     description: "Cloud Architect Designing Scalable and Resilient Solutions.",
-    imgSrc: "./pofile.jpeg",
+    imgSrc: profileImg,
   },
   {
     name: "Nicolas Zelarayan",
     role: "DevOps Engineer",
     description: "Cloud Architect Designing Scalable and Resilient Solutions.",
-    imgSrc: "./pofile.jpeg",
+    imgSrc: profileImg,
   },
   // Agrega el resto de los miembros del equipo aquí
   // ...
@@ -57,7 +56,7 @@ const teamMembers = [
 
 function ProfileCard({ member }) {
   return (
-    <div className="card bg-amber-100 rounded-lg p-4 text-center">  
+    <div className="card bg-amber-100 rounded-lg p-4 text-center w-64 h-85">  
       <img
         src={member.imgSrc}
         className="w-24 h-24 rounded-full transition duration-200 hover:scale-110 mx-auto" // Eliminamos object-cover, añadimos centrado horizontal
