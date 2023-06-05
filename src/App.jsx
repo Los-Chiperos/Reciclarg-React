@@ -7,7 +7,7 @@ import Registrar from "./components/pages/Registrar";
 import Login from "./components/pages/Login";
 import Nosotros from "./components/pages/Nosotros";
 import Faq from "./components/pages/Faq";
-import Heder2 from "./components/layout/Heder2";
+import Heder2 from "./components/layout/heder2";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
