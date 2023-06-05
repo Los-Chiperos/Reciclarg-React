@@ -9,14 +9,15 @@ function Heder2({ isLoggedIn, onLogout, username }) {
   const [showMenu, setShowMenu] = useState(false);
   const handleLogout = () => {
     // Llamar a la función onLogout para cerrar sesión
-    onLogout();}
+    onLogout();
+  };
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
 
   return (
-    <heder2>
+    <header>
       {/* Navbar goes here */}
       <nav className="bg-white shadow-lg px-1">
         <div className="max-w-6xl mx-auto px-4">
@@ -86,10 +87,16 @@ function Heder2({ isLoggedIn, onLogout, username }) {
             <div className="hidden md:flex items-center space-x-3">
               {isLoggedIn ? (
                 <>
-                  <span className="text-gray-500">Bienvenido, {username} </span>
                   <Link
-                    to="/"  onClick={handleLogout}
-                    className="py-2 px-2 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300" 
+                    to="/UserProfile"
+                    className="text-gray-500"
+                  >
+                    Bienvenido, {username}
+                  </Link>
+                  <Link
+                    to="/"
+                    onClick={handleLogout}
+                    className="py-2 px-2 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300"
                   >
                     Cerrar sesión
                   </Link>
@@ -163,9 +170,8 @@ function Heder2({ isLoggedIn, onLogout, username }) {
           </div>
         </div>
       </nav>
-    </heder2>
+    </header>
   );
 }
 
 export default Heder2;
-

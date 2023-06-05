@@ -8,6 +8,7 @@ import Login from "./components/pages/Login";
 import Nosotros from "./components/pages/Nosotros";
 import Faq from "./components/pages/Faq";
 import Heder2 from "./components/layout/heder2";
+import UserProfile from "./components/pages/userProfile";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -31,6 +32,7 @@ function App() {
         <Route path="/Eror" element={<Eror />} />
         <Route path="/Nosotros" element={<Nosotros />} />
         <Route path="/Faq" element={<Faq />} />
+        <Route path="/userProfile" element={<UserProfile isLoggedIn={isLoggedIn} onLogout={handleLogout} username={username}/>} />
       </Routes>
       <Footer />
     </BrowserRouter>
