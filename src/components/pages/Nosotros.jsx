@@ -67,10 +67,17 @@ function ProfileCard({ member }) {
         {member.description}
       </div>
       <div className="flex items-center justify-center gap-3 mt-2 w-auto h-5 text-gray-600">
-        <i className="fa-brands fa-twitter fa-lg cursor-pointer transition duration-200 hover:text-green-600"></i>
-        <i className="fa-brands fa-linkedin fa-lg cursor-pointer transition duration-200 hover:text-green-600"></i>
-        <i className="fa-brands fa-github fa-lg cursor-pointer transition duration-200 hover:text-green-600"></i>
-      </div>
+  <a href="https://twitter.com/username" target="_blank" rel="noopener noreferrer">
+    <i className="fab fa-twitter fa-lg cursor-pointer transition duration-200 hover:text-green-600"></i>
+  </a>
+  <a href="https://linkedin.com/in/username" target="_blank" rel="noopener noreferrer">
+    <i className="fab fa-linkedin fa-lg cursor-pointer transition duration-200 hover:text-green-600"></i>
+  </a>
+  <a href="https://github.com/username" target="_blank" rel="noopener noreferrer">
+    <i className="fab fa-github fa-lg cursor-pointer transition duration-200 hover:text-green-600"></i>
+  </a>
+</div>
+
     </div>
   );
 }
