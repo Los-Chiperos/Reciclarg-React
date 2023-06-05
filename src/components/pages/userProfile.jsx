@@ -1,3 +1,4 @@
+// UserProfile.js
 import React from 'react';
 import axios from 'axios';
 
@@ -7,8 +8,7 @@ class UserProfile extends React.Component {
         this.state = {
             user: {
                 name: '',
-                email: '',
-                // suponiendo que estos son los campos del usuario, agréguelos o quítelos según sea necesario
+                email: props.username,
             },
             isEditMode: false,
         };
@@ -19,7 +19,6 @@ class UserProfile extends React.Component {
     }
 
     componentDidMount() {
-        // suponiendo que el ID del usuario es accesible en alguna forma, aquí simplemente lo codifico
         const userId = 'usuario-id';
         axios.get(`https://api.reciclarg.cloud/users/${userId}`)
             .then(response => {
@@ -49,7 +48,6 @@ class UserProfile extends React.Component {
     }
 
     saveChanges() {
-        // Aquí debe llamar a la API de actualización, suponiendo que sea un método PUT
         const userId = 'usuario-id';
         axios.put(`https://api.reciclarg.cloud/users/${userId}`, this.state.user)
             .then(response => {
