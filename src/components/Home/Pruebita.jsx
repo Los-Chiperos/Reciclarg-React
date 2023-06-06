@@ -2,7 +2,7 @@ import eco from "../img/ecovidrio-bg-inv.jpg";
 import Map from "../pages/Map";
 import Contenedor from "./Contenedor";
 import Contac from "../pages/Contac";
-
+import Ambiente from "../pages/Ambiente";
 
 function Pruebita() {
   return (
@@ -27,22 +27,24 @@ function Pruebita() {
           </div>
         </div>
       </div>
-    <Contenedor/>
+      <Contenedor />
       <div className="container mx-auto relative">
-      <div id="map" style={{ height: '400px', width: '100%' }}></div>
-      <div className="absolute bottom-0 left-0 mb-4 ml-4">
-        <Map />
-        <button
-          id="button"
-          className="bg-teal-600 text-amber-100 hover:bg-green-600 font-bold py-2 px-4 border rounded-full"
-        >
-          Punto Ecológico más cercano
-        </button>
+        <div id="map" style={{ height: "400px", width: "100%" }}></div>
+        <div className="absolute bottom-0 left-0 mb-4 ml-4">
+          <Map />
+          <button
+            id="button"
+            className="bg-teal-600 text-amber-100 hover:bg-green-600 font-bold py-2 px-4 border rounded-full"
+          >
+            Punto Ecológico más cercano
+          </button>
+        </div>
       </div>
-    </div>
-        <Contac/>
-   </section>
-    );
-  }
-  
+      <br></br>
+      <Ambiente />
+      <Contac />
+    </section>
+  );
+}
+
 export default Pruebita;

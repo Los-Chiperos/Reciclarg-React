@@ -24,7 +24,11 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Heder2 isLoggedIn={isLoggedIn} onLogout={handleLogout} username={username} />
+      <Heder2
+        isLoggedIn={isLoggedIn}
+        onLogout={handleLogout}
+        username={username}
+      />
       <Routes>
         <Route path="/" element={<Pruebita />} />
         <Route path="/Registrar" element={<Registrar />} />
@@ -32,7 +36,17 @@ function App() {
         <Route path="/Eror" element={<Eror />} />
         <Route path="/Nosotros" element={<Nosotros />} />
         <Route path="/Faq" element={<Faq />} />
-        <Route path="/userProfile" element={<UserProfile isLoggedIn={isLoggedIn} onLogout={handleLogout} username={username}/>} />
+
+        <Route
+          path="/userProfile"
+          element={
+            <UserProfile
+              isLoggedIn={isLoggedIn}
+              onLogout={handleLogout}
+              username={username}
+            />
+          }
+        />
       </Routes>
       <Footer />
     </BrowserRouter>
@@ -40,4 +54,3 @@ function App() {
 }
 
 export default App;
-
