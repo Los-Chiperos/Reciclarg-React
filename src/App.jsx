@@ -9,6 +9,7 @@ import Nosotros from "./components/pages/Nosotros";
 import Faq from "./components/pages/Faq";
 import Heder2 from "./components/layout/heder2";
 import UserProfile from "./components/pages/userProfile";
+import Encuesta from "./components/pages/Encuesta";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -36,6 +37,7 @@ function App() {
         <Route path="/Eror" element={<Eror />} />
         <Route path="/Nosotros" element={<Nosotros />} />
         <Route path="/Faq" element={<Faq />} />
+        <Route path="/Encuesta" element={<Encuesta />} />
 
         <Route
           path="/userProfile"
