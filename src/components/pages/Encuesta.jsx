@@ -17,20 +17,12 @@ const Encuesta = () => {
 
     return (
         <div 
-            dangerouslySetInnerHTML={{
-                __html: `
-                <div
-                    data-tf-widget="Aal0Xkne"
-                    data-tf-opacity="100"
-                    data-tf-inline-on-mobile
-                    data-tf-iframe-props="title=Calculadora de Huella de Carbono - Reciclarg"
-                    data-tf-transitive-search-params
-                    data-tf-auto-focus
-                    data-tf-medium="snippet"
-                    data-tf-full-screen>
-                </div>
-                `
-            }}
+            data-tf-widget="Aal0Xkne" 
+            data-tf-opacity="100" 
+            data-tf-iframe-props="title=Calculadora de Huella de Carbono - Reciclarg" 
+            data-tf-transitive-search-params 
+            data-tf-medium="snippet" 
+            style={{ width: "100%", height: "500px" }}
         />
     );
 };
