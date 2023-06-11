@@ -1,3 +1,7 @@
+import React from "react";
+import Faq from "../pages/Faq";
+import { Link, NavLink } from "react-router-dom";
+
 function Footer() {
   return (
     <div
@@ -30,12 +34,12 @@ function Footer() {
           </a>
         </div>
         <div className="px-5 py-2">
-          <link
+          <Link
             to="/Faq"
             className="text-b ase leading-6 text-amber-100 hover:text-amber-100"
           >
             FAQ
-          </link>
+          </Link>
         </div>
       </div>
       <div className="flex justify-center mt-8 space-x-6">
