@@ -30,12 +30,12 @@ function Footer() {
           </a>
         </div>
         <div className="px-5 py-2">
-          <a
-            href="/Faq"
+          <link
+            to="/Faq"
             className="text-b ase leading-6 text-amber-100 hover:text-amber-100"
           >
             FAQ
-          </a>
+          </link>
         </div>
       </div>
       <div className="flex justify-center mt-8 space-x-6">
