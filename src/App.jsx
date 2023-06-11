@@ -31,7 +31,16 @@ function App() {
         username={username}
       />
       <Routes>
-        <Route path="/" element={<Pruebita />} />
+        <Route
+          path="/"
+          element={
+            <Pruebita
+              isLoggedIn={isLoggedIn}
+              onLogout={handleLogout}
+              username={username}
+            />
+          }
+        />
         <Route path="/Registrar" element={<Registrar />} />
         <Route path="/Login" element={<Login onLogin={handleLogin} />} />
         <Route path="/Eror" element={<Eror />} />
@@ -50,7 +59,8 @@ function App() {
           }
         />
       </Routes>
-      <Footer isLoggedIn={isLoggedIn}
+      <Footer
+        isLoggedIn={isLoggedIn}
         onLogout={handleLogout}
         username={username}
       />
