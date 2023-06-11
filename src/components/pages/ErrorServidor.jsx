@@ -1,9 +1,9 @@
-import Heder from "../layout/Heder";
+import Heder2 from "../layout/heder2";
 import Footer from "../layout/Footer"
 function ErrorServidor() {
   return (
     <>
-      <Heder />
+      <Heder2 />
       <div className="flex h-[calc(100vh-80px)] items-center justify-center p-5 w-full bg-white">
         <div className="text-center">
           <div className="inline-flex rounded-full bg-sky-100 p-4">
