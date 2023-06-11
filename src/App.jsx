@@ -36,17 +36,7 @@ function App() {
         <Route path="/Login" element={<Login onLogin={handleLogin} />} />
         <Route path="/Eror" element={<Eror />} />
         <Route path="/Nosotros" element={<Nosotros />} />
-        <Route
-  path="/Faq"
-  element={
-    <Faq
-      isLoggedIn={isLoggedIn}
-      onLogout={handleLogout}
-      username={username}
-    />
-  }
-/>
-
+        <Route path="/Faq" element={<Faq />} />
         <Route path="/Encuesta" element={<Encuesta />} />
 
         <Route
@@ -60,7 +50,10 @@ function App() {
           }
         />
       </Routes>
-      <Footer />
+      <Footer isLoggedIn={isLoggedIn}
+        onLogout={handleLogout}
+        username={username}
+      />
     </BrowserRouter>
   );
 }
