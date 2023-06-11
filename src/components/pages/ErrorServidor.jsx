@@ -30,7 +30,6 @@ function ErrorServidor() {
           </p>
         </div>
       </div>
-      <Footer/>
     </>
   );
 }
