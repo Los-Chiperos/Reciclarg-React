@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import Faq from "../pages/Faq";
 import Login from "../pages/Login";
 import Registrar from "../pages/Registrar";
 import Pruebita from "../Home/Pruebita";
@@ -53,12 +54,12 @@ function Heder2({ isLoggedIn, onLogout, username }) {
                 >
                   Encuesta
                 </Link>
-                <a
-                  href=""
+                <Link
+                  to="/Faq"
                   className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
                 >
-                  Encuestas
-                </a>
+                  FAQ
+                </Link>
               </div>
             </div>
             {/* Mobile menu button */}
