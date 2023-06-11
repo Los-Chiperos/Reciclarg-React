@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import Faq from "../pages/Faq";
-import Login from "../pages/Login";
-import Registrar from "../pages/Registrar";
-import Pruebita from "../Home/Pruebita";
-import Nosotros from "../pages/Nosotros";
+
 
 function Heder2({ isLoggedIn, onLogout, username }) {
   const [showMenu, setShowMenu] = useState(false);
@@ -138,7 +134,7 @@ function Heder2({ isLoggedIn, onLogout, username }) {
                       to="/login"
                       className="text-center block pl-4 text-sm font-semibold text-gray-900 hover:bg-green-500 hover:text-white transition duration-300 py-2"
                     >
-                      Logearse
+                      Loguearse
                     </Link>
                   </li>
                 </>

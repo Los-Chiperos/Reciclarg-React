@@ -19,7 +19,7 @@ function Ambiente() {
             </p>
             <div className="mt-6 lg:mt-10">
               <button
-                onClick={() => (window.location.href = "huella.html")}
+                onClick={() => (window.location.href = "/")}
                 type="button"
                 className="py-4 px-6 bg-amber-100 hover:bg-teal-600 focus:ring-indigo-500 hover:text-amber-100 focus:ring-offset-indigo-200 text-teal-600  transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg"
               >
