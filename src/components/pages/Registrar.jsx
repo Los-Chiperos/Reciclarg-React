@@ -9,7 +9,7 @@ function Registrar() {
       <div className="flex bg-white rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl">
         <div className="hidden lg:block lg:w-1/2 bg-cover" style={{backgroundImage: "url('https://images.unsplash.com/photo-1546514714-df0ccc50d7bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80')"}}></div>
         <div className="w-full p-8 lg:w-1/2">
-          <h2 className="text-4xl font-bold text-green-600 text-center">Registrarse</h2>
+          <h2 className="text-4xl font-bold text-green-600 text-center">Registrarse </h2>
           <p className="text-x1 font-bold sm:text-green-700 text-center"></p>
           <div className="mt-4 flex items-center justify-between"></div>
           <a href="" className="flex items-center justify-center mt-4 text-white rounded-lg shadow-md hover:bg-gray-100">

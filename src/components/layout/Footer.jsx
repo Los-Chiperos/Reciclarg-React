@@ -5,14 +5,14 @@ import { Link, NavLink } from "react-router-dom";
 function Footer() {
   return (
     <div
-      className="bg-gradient-to-r from-green-600 to-teal-600 max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8 tails-selected-element"
+      className="bg-gradient-to-r from-green-600 to-teal-600   px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8 lg:py-16"
       contentEditable="false" suppressContentEditableWarning="true"
     >
       <div className="flex flex-wrap justify-center -mx-5 -my-2">
         <div className="px-5 py-2">
           <a
             href="/Nosotros"
-            className="text-base leading-6 text-amber-100 hover:text-amber-100"
+            className="text-base leading-6 text-amber-100 hover:text-amber-500"
           >
             About
           </a>
@@ -20,7 +20,7 @@ function Footer() {
         <div className="px-5 py-2">
           <a
             href="#"
-            className="text-base leading-6 text-amber-100 hover:text-amber-100"
+            className="text-base leading-6 text-amber-100 hover:text-amber-500"
           >
             blog
           </a>
@@ -28,7 +28,7 @@ function Footer() {
         <div className="px-5 py-2">
           <a
             href="#"
-            className="text-base leading-6 text-amber-100 hover:text-amber-100"
+            className="text-base leading-6 text-amber-100 hover:text-amber-500"
           >
             About
           </a>
@@ -36,7 +36,7 @@ function Footer() {
         <div className="px-5 py-2">
           <Link
             to="/Faq"
-            className="text-b ase leading-6 text-amber-100 hover:text-amber-100"
+            className="text-b ase leading-6 text-amber-100 hover:text-amber-500"
           >
             FAQ
           </Link>
