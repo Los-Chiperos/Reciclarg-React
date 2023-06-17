@@ -30,7 +30,7 @@ function Pruebita() {
           </div>
         </div>
       </div>
-      <Contenedor />
+      <Contenedores />
       <div className="container mx-auto relative">
   <div id="map" style={{ height: "400px", width: "100%" }}></div>
   <div className="absolute bottom-0 left-0 mb-4 ml-4">
