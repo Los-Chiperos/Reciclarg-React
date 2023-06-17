@@ -4,7 +4,7 @@ import Contenedor from "./Contenedor";
 import Contac from "../pages/Contac";
 import Ambiente from "../pages/Ambiente";
 import background from "../img/background-5.jpeg";
-import Contenedores from "../pages/contenedores";
+import Contenedores from "../pages/Contenedores";
 
 function Pruebita() {
   return (
@@ -30,7 +30,6 @@ function Pruebita() {
           </div>
         </div>
       </div>
-      <Contenedores/>
       <div className="container mx-auto relative">
   <div id="map" style={{ height: "400px", width: "100%" }}></div>
   <div className="absolute bottom-0 left-0 mb-4 ml-4">
