@@ -1,28 +1,65 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
+import Service from '../../service/Service'
 import { useNavigate } from 'react-router-dom';
 
+ 
 const Login = ({ onLogin }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+ 
+  const service =  new Service();
 
   const handleLogin = async () => {
-    try {
-      const response = await axios.post('https://api.reciclarg.cloud/auth', {
-        username,
-        password
-      });
-
-      if (response.status === 200) {
-        onLogin(username);
-        navigate('/');
-      }
-    } catch (error) {
+   
+       console.log(username + " " + password);
+     let params = JSON.stringify({
+      "username": username,
+      "password": password
+    });
+   
+    let response = await service.login('login',params);
+    console.log("status " + response);
+    if (response.status == 200){
+      onLogin(username);
+      navigate('/');
+    } else {
       setError("Error de autenticación");
     }
   };
+   
+   
+    //  console.log(params);
+    //  let config = {
+    //     method: 'post',
+    //     maxBodyLength: Infinity,
+    //     url: 'http://localhost:8080/login',
+    //     headers: { 
+    //       'Content-Type': 'application/json'
+    //     },
+    //     data : params   
+    //     };
+
+    //  axios.request(config)
+    //       .then((response) => {
+    //       console.log(JSON.stringify(response.data));
+    //         if (response.status === 200) {
+    //         onLogin(username);
+    //         var token = response.headers.get('Authorization');
+    //         localStorage.setItem('token',token);
+    //         navigate('/');
+    //         }
+    //         })
+    //       .catch((error) => {
+    //         console.log(error);
+    //          setError("Error de autenticación");
+    //       });
+
+
+
+
 
   return (
     <div className="py-6">
@@ -39,10 +76,10 @@ const Login = ({ onLogin }) => {
           {error && <p>{error}</p>}
           <div className="mt-4 flex items-center justify-between"></div>
           <div className="mt-4">
-            <label className="block text-green-600 text-sm font-bold mb-2">Email</label>
+            <label className="block text-green-600 text-sm font-bold mb-2">Username</label>
             <input
               className="bg-amber-100 text-green-600 focus:outline-none focus:shadow-outline border border-green-600 rounded py-2 px-4 block w-full appearance-none"
-              type="email"
+              type="text"
               id="username"
               value={username}
               onChange={e => setUsername(e.target.value)}
