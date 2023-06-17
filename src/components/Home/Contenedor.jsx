@@ -2,12 +2,12 @@
 function Contenedor() {
     return (
       <section className="mb-32 text-gray-800 text-center">
-        <br></br>
-        <h2 className="text-3xl font-bold mb-20">Busca el contenedor adecuado</h2>
+        <br></br><br />
+        <h2 className="text-3xl font-bold mb-20 text-green-700 ">Busca el contenedor adecuado</h2>
   
         <div className="grid lg:gap-x-12 lg:grid-cols-3">
           <div className="mb-12 lg:mb-0">
-            <div className="rounded-lg shadow-lg h-full block hover:bg-amber-100 hover:text-teal-600 hover:font-semibold focus hover:scale-105 transition-transform duration-300">
+            <div className="rounded-lg shadow-lg  h-full block hover:bg-amber-100 hover:text-teal-600 hover:font-semibold focus hover:scale-105 transition-transform duration-300">
               <div className="flex justify-center">
                 <div className="p-4 animate-bounce bg-green-500 rounded-full shadow-lg inline-block -mt-8">
                   <svg className="w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -29,7 +29,7 @@ function Contenedor() {
           </div>
   
           <div className="mb-12 lg:mb-0">
-            <div className="rounded-lg shadow-lg h-full block bg-white hover:bg-amber-100 hover:scale-105 transition-transform duration-300">
+          <div className="rounded-lg shadow-lg  h-full block hover:bg-amber-100 hover:text-teal-600 hover:font-semibold focus hover:scale-105 transition-transform duration-300">
               <div className="flex justify-center">
                 <div className="p-4 bg-amber-400 rounded-full shadow-lg inline-block -mt-8 animate-bounce">
                   <svg className="w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -43,7 +43,7 @@ function Contenedor() {
                   El contenedor amarillo es el adecuado para reciclar plásticos, latas y envases.
                 </p>
                 <button className="relative btn4 mt-12 px-10 py-7 border border-white uppercase font-semibold tracking-wider leading-none overflow-hidden" type="button">
-                  <span className="absolute inset-x-0 h-3 bottom-0 bg-amber-400"></span>
+                  <span className="absolute inset-x-0 h-3 bottom-0 bg-green-600"></span>
                   saber más
                 </button>
               </div>
@@ -51,7 +51,7 @@ function Contenedor() {
           </div>
   
           <div className="mb-12 lg:mb-0">
-            <div className="rounded-lg shadow-lg h-full block bg-white hover:bg-amber-100 hover:scale-105 transition-transform duration-300">
+          <div className="rounded-lg shadow-lg  h-full block hover:bg-amber-100 hover:text-teal-600 hover:font-semibold focus hover:scale-105 transition-transform duration-300">
               <div className="flex justify-center">
                 <div className="p-4 bg-blue-600 animate-bounce rounded-full shadow-lg inline-block -mt-8">
                   <svg className="w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -65,7 +65,7 @@ function Contenedor() {
                   El contenedor azul es el correspondiente para depositar papel y cartón.
                 </p>
                 <button className="relative btn4 mt-12 px-10 py-7 border border-white uppercase font-semibold tracking-wider leading-none overflow-hidden" type="button">
-                  <span className="absolute inset-x-0 h-3 bottom-0 bg-blue-600"></span>
+                  <span className="absolute inset-x-0 h-3 bottom-0 bg-green-600"></span>
                   saber más
                 </button>
               </div>
