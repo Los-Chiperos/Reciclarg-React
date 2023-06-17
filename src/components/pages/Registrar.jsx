@@ -1,4 +1,5 @@
 import React from 'react';
+
 import axios from 'axios';
 
 function Registrar() {
@@ -12,7 +13,8 @@ function Registrar() {
           <h2 className="text-4xl font-bold text-green-600 text-center">Registrarse</h2>
           <p className="text-x1 font-bold sm:text-green-700 text-center"></p>
           <div className="mt-4 flex items-center justify-between"></div>
-          <a href="" className="flex items-center justify-center mt-4 text-white rounded-lg shadow-md hover:bg-gray-100">
+
+          {/* <a href="" className="flex items-center justify-center mt-4 text-white rounded-lg shadow-md hover:bg-gray-100">
             <div className="px-4 py-3">
               <svg className="h-6 w-6" viewBox="0 0 40 40">
                 <path d="M36.3425 16.7358H35V16.6667H20V23.3333H29.4192C28.045 27.2142 24.3525 30 20 30C14.4775 30 10 25.5225 10 20C10 14.4775 14.4775 9.99999 20 9.99999C22.5492 9.99999 24.8683 10.9617 26.6342 12.5325L31.3483 7.81833C28.3717 5.04416 24.39 3.33333 20 3.33333C10.7958 3.33333 3.33335 10.7958 3.33335 20C3.33335 29.2042 10.7958 36.6667 20 36.6667C29.2042 36.6667 36.6667 29.2042 36.6667 20C36.6667 18.8825 36.5517 17.7917 36.3425 16.7358Z" fill="#FFC107" />
@@ -22,7 +24,7 @@ function Registrar() {
               </svg>
             </div>
             <h1 className="text-amber-100 px-4 py-3 w-5/6 bg-green-600 text-center hover:text-green-600 hover:bg-amber-100 font-bold hover:transition-duration: 75ms">Registrate con Google</h1>
-          </a>
+          </a> */}
           <div className="mt-4">
             <label className="block text-green-600 text-sm font-bold mb-2">Nombre</label>
             <input className="bg-amber-100 text-green-600 focus:outline-none focus:shadow-outline border border-green-600 rounded py-2 px-4 block w-full appearance-none" type="text" id='nombre'/>
@@ -32,8 +34,8 @@ function Registrar() {
             <input className="bg-amber-100 text-green-600 focus:outline-none focus:shadow-outline border border-green-600 rounded py-2 px-4 block w-full appearance-none" type="text" id='apellido'/>
           </div>
           <div className="mt-4">
-            <label className="block text-green-600 text-sm font-bold mb-2">Email</label>
-            <input className="bg-amber-100 text-green-600 focus:outline-none focus:shadow-outline border border-green-600 rounded py-2 px-4 block w-full appearance-none" type="email" id='username'/>
+            <label className="block text-green-600 text-sm font-bold mb-2">Nombre de Usuario</label>
+            <input className="bg-amber-100 text-green-600 focus:outline-none focus:shadow-outline border border-green-600 rounded py-2 px-4 block w-full appearance-none" type="text" id='username'/>
           </div>
           <div className="mt-4">
             <div className="flex justify-between">
@@ -48,7 +50,33 @@ function Registrar() {
             <a href="#" className="text-xs text-green-600"></a>
           </div>
           <input className="bg-amber-100 text-green-600 focus:outline-none focus:shadow-outline border border-green-600 rounded py-2 px-4 block w-full appearance-none" type="password" id='repetirpassword'/>
+             <br />
+          {/* agregar foto y zona */}
+          <div className="flex justify-between">
+            <label className="block text-green-600 text-sm font-bold mb-2">Seleccionar Foto de Perfil</label>
+            <a href="#" className="text-xs text-green-600"></a>
+          </div>
+          <input className="bg-amber-100 text-green-600 focus:outline-none focus:shadow-outline border border-green-600 rounded py-2 px-4 block w-full appearance-none" 
+            type="file" 
+            id='foto'
+            accept="image/png, image/gif, image/jpeg"
+            />
+            <br />
+          {/* agregar foto y zona */}
+          <div className="flex justify-between">
+            <label className="block text-green-600 text-sm font-bold mb-2">Seleccionar Zona</label>
+            <a href="#" className="text-xs text-green-600"></a>
+          </div>
+              <select aria-label="Default select example"
+                className="bg-amber-100 text-green-600 focus:outline-none focus:shadow-outline border border-green-600 rounded py-2 px-4 block w-full appearance-none"
+              >
+                <option>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+                </select>
           <br />
+           
           <div className="mt-4">
             <button className="bg-green-600 text-amber-100 font-bold py-2 transition-duration px-4 w-full rounded hover:bg-amber-100 hover:text-green-600"onClick={handleRegister}>Registrarse</button>
           </div>
@@ -57,6 +85,7 @@ function Registrar() {
             <a href="/Login" className="text-xs hover:font-semibold text-green-600 uppercase">¿Tienes cuenta? Logeate</a>
             <span className="border-b w-1/5 md:w-1/4"></span>
           </div>
+
         </div>
       </div>
     </div>
