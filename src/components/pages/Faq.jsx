@@ -51,7 +51,7 @@ const Faq = () => {
           <div key={index}>
             {/* Question */}
             <div
-              className={`w-full border-b-2 border-sky-600 text-teal-600 hover:bg-amber-100 hover:text-teal-600 ${
+              className={`w-full border-b-2 border-sky-600 text-amber-500 hover:bg-amber-100 hover:text-teal-600 ${
                 openAccordion === index ? "bg-teal-600 text-amber-100" : ""
               }`}
             >
