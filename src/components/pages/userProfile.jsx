@@ -73,7 +73,7 @@ class UserProfile extends React.Component {
     
     render() {
         return (
-            <div className="mx-auto w-full max-w-lg py-10">
+            <div className="mx-auto w-full max-w-lg py-10 p-2n">
                 <h2 className="text-center text-2xl mb-4 py-5">{this.state.isEditMode ? "Modificar Datos" : "Perfil de Usuario"}</h2>
                 <div className="mb-4">
                     <label className="block text-sm font-bold mb-2">Nombre:</label>
@@ -105,11 +105,11 @@ class UserProfile extends React.Component {
                         </div>
                     </>}
                 <div className="flex justify-center">
-                    <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-4 focus:outline-none focus:shadow-outline" onClick={this.toggleEditMode}>
+                    <button className="bg-green-600 text-amber-100 hover:bg-amber-100 hover:text-green-600 font-bold py-2 px-4 rounded mr-4 focus:outline-none focus:shadow-outline" onClick={this.toggleEditMode}>
                         {this.state.isEditMode ? 'Cancelar' : 'Editar'}
                     </button>
                     {this.state.isEditMode &&
-                        <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" onClick={this.saveChanges}>Guardar</button>}
+                        <button className="bg-green-600 text-amber-100 hover:bg-amber-100 hover:text-green-600 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" onClick={this.saveChanges}>Guardar</button>}
                 </div>
             </div>
         );
