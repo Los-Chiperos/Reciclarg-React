@@ -74,7 +74,7 @@ class UserProfile extends React.Component {
     render() {
         return (
             <div className="mx-auto w-full max-w-lg py-10 p-2n">
-                <h2 className="text-center text-2xl mb-4 py-5">{this.state.isEditMode ? "Modificar Datos" : "Perfil de Usuario"}</h2>
+                <h2 className="text-center text-2xl font-bold mb-4 py-5">{this.state.isEditMode ? "Modificar Datos" : "Perfil de Usuario"}</h2>
                 <div className="mb-4">
                     <label className="block text-sm font-bold mb-2">Nombre:</label>
                     {this.state.isEditMode ?
