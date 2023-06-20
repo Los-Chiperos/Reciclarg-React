@@ -35,11 +35,11 @@ function Heder2({ isLoggedIn, onLogout, username }) {
             <div className="flex space-x-7">
               <div>
                 {/* Website Logo */}
-                <Link to="/" className="flex items-center py-4 px-2">
+                <Link to="/" className="flex items-center ">
                   <img
-                    src="https://imageup.me/images/94962622-4d2d-45ba-811f-b959d8619323.png"
+                    src="http://imgfz.com/i/XecCbuo.png"
                     alt="Logo"
-                    className="h-12 w-12 "
+                    className="h-1/5 w-1/5 "
                   />
                 </Link>
               </div>

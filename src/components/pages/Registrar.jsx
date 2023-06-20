@@ -1,12 +1,45 @@
 import React from 'react';
 import axios from 'axios';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Registrar() {
+
+  const handleRegister = async () => {
+    const nombre = document.getElementById('name').value;
+    const apellido = document.getElementById('surname').value;
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    const repetirpassword = document.getElementById('repetirpassword').value;
+
+    if (password !== repetirpassword) {
+      toast.error('Las contraseñas no coinciden');
+      return;
+    }
+
+    try {
+      const response = await axios.post('https://api.reciclarg.cloud/users', {
+        nombre: nombre,
+        apellido: apellido,
+        username: username,
+        password: password,
+      });
+
+      if (response.data === 'Usuario creado exitosamente') {
+        toast.success('Registro exitoso');
+      } else {
+        toast.error('El usuario ya existe');
+      }
+    } catch (error) {
+      toast.error('Error en el registro');
+    }
+  };
+
   return (
     <>
-   
-   <div className="py-6">
-      <div className="flex bg-white rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl">
+      <ToastContainer />
+      <div className="py-6">
+        <div className="flex bg-white rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl">
         <div className="hidden lg:block lg:w-1/2 bg-cover" style={{backgroundImage: "url('https://images.unsplash.com/photo-1546514714-df0ccc50d7bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80')"}}></div>
         <div className="w-full p-8 lg:w-1/2">
           <h2 className="text-4xl font-bold text-green-600 text-center">Registrarse </h2>
@@ -24,76 +57,43 @@ function Registrar() {
             <h1 className="text-amber-100 px-4 py-3 w-5/6 bg-green-600 text-center hover:text-green-600 hover:bg-amber-100 font-bold hover:transition-duration: 75ms">Registrate con Google</h1>
           </a>
           <div className="mt-4">
-            <label className="block text-green-600 text-sm font-bold mb-2">Nombre</label>
-            <input className="bg-amber-100 text-green-600 focus:outline-none focus:shadow-outline border border-green-600 rounded py-2 px-4 block w-full appearance-none" type="text" id='name'/>
-          </div>
-          <div className="mt-4">
-            <label className="block text-green-600 text-sm font-bold mb-2">Apellido</label>
-            <input className="bg-amber-100 text-green-600 focus:outline-none focus:shadow-outline border border-green-600 rounded py-2 px-4 block w-full appearance-none" type="text" id='surname'/>
-          </div>
-          <div className="mt-4">
-            <label className="block text-green-600 text-sm font-bold mb-2">Email</label>
-            <input className="bg-amber-100 text-green-600 focus:outline-none focus:shadow-outline border border-green-600 rounded py-2 px-4 block w-full appearance-none" type="email" id='username'/>
-          </div>
-          <div className="mt-4">
-            <div className="flex justify-between">
-              <label className="block text-green-600 text-sm font-bold mb-2">Contraseña</label>
-              <a href="#" className="text-xs text-text-green-600"></a>
+              <label className="block text-green-600 text-sm font-bold mb-2">Nombre</label>
+              <input className="bg-amber-100 text-green-600 focus:outline-none focus:shadow-outline border border-green-600 rounded py-2 px-4 block w-full appearance-none" type="text" id='name'/>
             </div>
-            <input className="bg-amber-100 text-green-600 focus:outline-none focus:shadow-outline border border-green-600 rounded py-2 px-4 block w-full appearance-none" type="password" id='password'/>
-            <br />
-          </div>
-          <div className="flex justify-between">
-            <label className="block text-green-600 text-sm font-bold mb-2">Repetir contraseña</label>
-            <a href="#" className="text-xs text-green-600"></a>
-          </div>
-          <input className="bg-amber-100 text-green-600 focus:outline-none focus:shadow-outline border border-green-600 rounded py-2 px-4 block w-full appearance-none" type="password" id='repetirpassword'/>
-          <br />
-          <div className="mt-4">
-            <button className="bg-green-600 text-amber-100 font-bold py-2 transition-duration px-4 w-full rounded hover:bg-amber-100 hover:text-green-600"onClick={handleRegister}>Registrarse</button>
-          </div>
-          <div className="mt-4 flex items-center justify-between">
-            <span className="border-b w-1/5 md:w-1/4"></span>
-            <a href="/Login" className="text-xs hover:font-semibold text-green-600 uppercase">¿Tienes cuenta? Logeate</a>
-            <span className="border-b w-1/5 md:w-1/4"></span>
+            <div className="mt-4">
+              <label className="block text-green-600 text-sm font-bold mb-2">Apellido</label>
+              <input className="bg-amber-100 text-green-600 focus:outline-none focus:shadow-outline border border-green-600 rounded py-2 px-4 block w-full appearance-none" type="text" id='surname'/>
+            </div>
+            <div className="mt-4">
+              <label className="block text-green-600 text-sm font-bold mb-2">Email</label>
+              <input className="bg-amber-100 text-green-600 focus:outline-none focus:shadow-outline border border-green-600 rounded py-2 px-4 block w-full appearance-none" type="email" id='username'/>
+            </div>
+            <div className="mt-4">
+              <div className="flex justify-between">
+                <label className="block text-green-600 text-sm font-bold mb-2">Contraseña</label>
+                <a href="#" className="text-xs text-text-green-600"></a>
+              </div>
+              <input className="bg-amber-100 text-green-600 focus:outline-none focus:shadow-outline border border-green-600 rounded py-2 px-4 block w-full appearance-none" type="password" id='password'/>
+            </div>
+            <div className="mt-4">
+              <div className="flex justify-between">
+                <label className="block text-green-600 text-sm font-bold mb-2">Repetir Contraseña</label>
+                <a href="#" className="text-xs text-text-green-600"></a>
+              </div>
+              <input className="bg-amber-100 text-green-600 focus:outline-none focus:shadow-outline border border-green-600 rounded py-2 px-4 block w-full appearance-none" type="password" id='repetirpassword'/>
+            </div>
+            <div className="mt-8">
+              <button className="bg-green-600 text-amber-100 font-bold py-2 px-4 w-full rounded hover:bg-amber-100 hover:text-green-600 transition duration-200 each-in-out" onClick={handleRegister}>Registrarse</button>
+            </div>
+            <div className="mt-4 flex items-center justify-between">
+              <a href="#" className="text-green-600 text-sm hover:underline">¿Olvidaste tu contraseña?</a>
+              <a href="/Login" className="text-green-600 text-sm hover:underline">¿Ya tienes una cuenta? Iniciar Sesión</a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     </>
   );
 }
-
-const handleRegister = async () => {
-  const nombre = document.getElementById('nombre').value;
-  const apellido = document.getElementById('apellido').value;
-  const username = document.getElementById('username').value;
-  const password = document.getElementById('password').value;
-  const repetirpassword = document.getElementById('repetirpassword').value;
-
-  if (password !== repetirpassword) {
-    alert('Las contraseñas no coinciden');
-    return;
-  }
-
-  try {
-    const response = await axios.post('https://api.reciclarg.cloud/users', {
-      nombre: nombre,
-      apellido: apellido,
-      username: username,
-      password: password,
-    });
-console.log(response.data)
-  if (response.data === 'Usuario creado exitosamente') {
-      alert('Registro exitoso');
-      // Redirige a otra página o realiza alguna acción adicional
-    } else {
-      alert('No se pudo generar el registro');
-    }
-  } catch (error) {
-    alert('Error en el registro');
-  }
-};
-
 
 export default Registrar;
