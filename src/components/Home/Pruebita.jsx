@@ -14,6 +14,12 @@ function Pruebita() {
         style={{ backgroundImage: `url(${eco})` }}
   
       >
+        <head>
+          <style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,600;0,700;1,200;1,400;1,600;1,800;1,900&display=swap');
+</style>
+
+        </head>
         <div className=" text-green-700 text-lg h-auto grid grid-cols-1 gap-y-8 lg:grid-cols-2 lg:items-center lg:gap-x-16">
           <div className="mx-auto max-w-lg text-center lg:mx-0 ltr:lg:text-left rtl:lg:text-right">
             <h2 id="puntos-inf" className="text-lg font-bold sm:text-7xl">
