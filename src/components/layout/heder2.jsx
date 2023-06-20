@@ -24,9 +24,9 @@ function Heder2({ isLoggedIn, onLogout, username }) {
                 {/* Website Logo */}
                 <Link to="/" className="flex items-center py-4 px-2">
                   <img
-                    src="https://w7.pngwing.com/pngs/963/751/png-transparent-test-case-logo-software-testing-engineering-use-case-business-blue-people-innovation.png"
+                    src="https://imageup.me/images/94962622-4d2d-45ba-811f-b959d8619323.png"
                     alt="Logo"
-                    className="h-8 w-8 mr-2"
+                    className="h-12 w-12 "
                   />
                 </Link>
               </div>
