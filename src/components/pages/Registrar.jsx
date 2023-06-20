@@ -25,11 +25,11 @@ function Registrar() {
           </a>
           <div className="mt-4">
             <label className="block text-green-600 text-sm font-bold mb-2">Nombre</label>
-            <input className="bg-amber-100 text-green-600 focus:outline-none focus:shadow-outline border border-green-600 rounded py-2 px-4 block w-full appearance-none" type="text" id='name'/>
+            <input className="bg-amber-100 text-green-600 focus:outline-none focus:shadow-outline border border-green-600 rounded py-2 px-4 block w-full appearance-none" type="text" id='nombre'/>
           </div>
           <div className="mt-4">
             <label className="block text-green-600 text-sm font-bold mb-2">Apellido</label>
-            <input className="bg-amber-100 text-green-600 focus:outline-none focus:shadow-outline border border-green-600 rounded py-2 px-4 block w-full appearance-none" type="text" id='surname'/>
+            <input className="bg-amber-100 text-green-600 focus:outline-none focus:shadow-outline border border-green-600 rounded py-2 px-4 block w-full appearance-none" type="text" id='apellido'/>
           </div>
           <div className="mt-4">
             <label className="block text-green-600 text-sm font-bold mb-2">Email</label>

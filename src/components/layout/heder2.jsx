@@ -109,7 +109,8 @@ function Heder2({ isLoggedIn, onLogout, username }) {
             <div className="hidden md:flex items-center space-x-3">
               {isLoggedIn ? (
                 <>
-                  <Link to="/UserProfile" className="text-gray-500">
+                  <Link to={`/userProfile/${username}`}
+ className="text-gray-500">
                     Bienvenido, {username}
                   </Link>
                   <Link
