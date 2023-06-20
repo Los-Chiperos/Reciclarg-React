@@ -1,11 +1,24 @@
-import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
-
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function Heder2({ isLoggedIn, onLogout, username }) {
   const [showMenu, setShowMenu] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setShowMenu(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const handleLogout = () => {
-    // Llamar a la función onLogout para cerrar sesión
     onLogout();
   };
 
@@ -77,17 +90,26 @@ function Heder2({ isLoggedIn, onLogout, username }) {
                 >
                   <path d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
+                <svg
+                  className={`w-6 h-6 text-gray-500 hover:text-green-500 ${
+                    showMenu ? "" : "hidden"
+                  }`}
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
               </button>
             </div>
-            {/* End of Mobile menu button */}
             {/* Secondary Navbar items */}
             <div className="hidden md:flex items-center space-x-3">
               {isLoggedIn ? (
                 <>
-                  <Link
-                    to="/UserProfile"
-                    className="text-gray-500"
-                  >
+                  <Link to="/UserProfile" className="text-gray-500">
                     Bienvenido, {username}
                   </Link>
                   <Link
@@ -172,3 +194,4 @@ function Heder2({ isLoggedIn, onLogout, username }) {
 }
 
 export default Heder2;
+
