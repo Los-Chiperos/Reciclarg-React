@@ -1,5 +1,6 @@
+// App.jsx
 import React, { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom';
 import Pruebita from "./components/Home/Pruebita";
 import Footer from "./components/layout/Footer";
 import Eror from "./components/pages/Eror";
@@ -10,7 +11,6 @@ import Faq from "./components/pages/Faq";
 import Heder2 from "./components/layout/heder2";
 import UserProfile from "./components/pages/userProfile";
 import Encuesta from "./components/pages/Encuesta";
-
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -31,7 +31,7 @@ function App() {
         onLogout={handleLogout}
         username={username}
       />
-      
+
       <Routes>
         <Route
           path="/"
@@ -51,7 +51,7 @@ function App() {
         <Route path="/Encuesta" element={<Encuesta />} />
 
         <Route
-          path="/userProfile"
+          path="/userProfile/:username"
           element={
             <UserProfile
               isLoggedIn={isLoggedIn}
