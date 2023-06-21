@@ -55,7 +55,7 @@ class Service{
             ;
     }
 
-    getZonas(url, data = null){
+    async getZonas(url, data = null){
         url = this.joinUrl(url);
         return   axios.request(config('get',url,data))
                 .then((response) => {
