@@ -35,7 +35,7 @@ class Service{
         myHeaders.append()
     }
 //  --------------------------------------------
-    login(url, data = null){
+    async login(url, data = null){
         console.log('entro login');
             url = this.joinUrl(url);
         return   axios.request(config('post',url,data))
@@ -55,7 +55,7 @@ class Service{
             ;
     }
 
-    async getZonas(url, data = null){
+   async getZonas(url, data = null){
         url = this.joinUrl(url);
         return   axios.request(config('get',url,data))
                 .then((response) => {
