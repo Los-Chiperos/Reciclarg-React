@@ -27,10 +27,10 @@ function Pruebita() {
             </h2>
 
             <a
-              id="saber-mas"
-              href="#"
-              className="mt-8 hover:text-amber-100 text-green-700 hover:bg-green-700  bg-amber-100 inline-block rounded px-12 py-3 text-sm font-bold  transition  focus:outline-none focus:ring focus:ring-amber-100 border-0 !important"
-            >
+  id="saber-mas"
+  href="#map"
+  className="mt-8 hover:text-amber-100 text-green-700 hover:bg-green-700  bg-amber-100 inline-block rounded px-12 py-3 text-sm font-bold  transition  focus:outline-none focus:ring focus:ring-amber-100 border-0 !important"
+>
               Saber Más
             </a>
           </div>

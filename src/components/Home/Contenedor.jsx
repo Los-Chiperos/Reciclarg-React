@@ -22,7 +22,13 @@ function Contenedor() {
                 </p>
                 <button className="relative btn4 mt-12 px-10 py-7 border border-white uppercase font-semibold tracking-wider leading-none overflow-hidden" type="button">
                   <span className="absolute inset-x-0 h-3 bottom-0 bg-green-600"></span>
-                  saber más
+                  <a
+  id="saber-mas"
+  href="#Contenedores1"
+>
+  Saber Más
+</a>
+       
                 </button>
               </div>
             </div>
@@ -44,7 +50,13 @@ function Contenedor() {
                 </p>
                 <button className="relative btn4 mt-12 px-10 py-7 border border-white uppercase font-semibold tracking-wider leading-none overflow-hidden" type="button">
                   <span className="absolute inset-x-0 h-3 bottom-0 bg-green-600"></span>
-                  saber más
+                  <a
+  id="saber-mas"
+  href="#Contenedores1"
+>
+  Saber Más
+</a>
+       
                 </button>
               </div>
             </div>
@@ -66,7 +78,13 @@ function Contenedor() {
                 </p>
                 <button className="relative btn4 mt-12 px-10 py-7 border border-white uppercase font-semibold tracking-wider leading-none overflow-hidden" type="button">
                   <span className="absolute inset-x-0 h-3 bottom-0 bg-green-600"></span>
-                  saber más
+                  <a
+  id="saber-mas"
+  href="#Contenedores1"
+>
+  Saber Más
+</a>
+       
                 </button>
               </div>
             </div>
