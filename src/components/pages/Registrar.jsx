@@ -1,8 +1,32 @@
-import React from 'react';
+import React   from 'react';
 
-import axios from 'axios';
+import Service from '../../service/Service'
+
+
+   const service =  new Service();
+   let zonas = {};
+   zonas = await service.getZonas('zona/listarzonas');
+ 
 
 function Registrar() {
+
+   const [zonaId, setZona ] = React.useState();
+   const [selectedFile, setSelectedFile] = React.useState();
+   
+
+   const handleChange = (event) => {
+    setZona(event.target.value);
+  }
+     const handleFile = (event) => {
+    setSelectedFile(event.target.files[0]);
+  }
+  React.useEffect(() => {
+    console.log("File has been set.")
+  },[selectedFile]);
+
+
+
+
   return (
     <>
    
@@ -51,7 +75,7 @@ function Registrar() {
           </div>
           <input className="bg-amber-100 text-green-600 focus:outline-none focus:shadow-outline border border-green-600 rounded py-2 px-4 block w-full appearance-none" type="password" id='repetirpassword'/>
              <br />
-          {/* agregar foto y zona */}
+          {/* agregar foto*/}
           <div className="flex justify-between">
             <label className="block text-green-600 text-sm font-bold mb-2">Seleccionar Foto de Perfil</label>
             <a href="#" className="text-xs text-green-600"></a>
@@ -59,22 +83,29 @@ function Registrar() {
           <input className="bg-amber-100 text-green-600 focus:outline-none focus:shadow-outline border border-green-600 rounded py-2 px-4 block w-full appearance-none" 
             type="file" 
             id='foto'
-            accept="image/png, image/gif, image/jpeg"
+            //  value={selectedFile}
+            onChange={handleFile}
+            accept="image/*"
             />
             <br />
-          {/* agregar foto y zona */}
+          {/* agregar zona */}
           <div className="flex justify-between">
             <label className="block text-green-600 text-sm font-bold mb-2">Seleccionar Zona</label>
             <a href="#" className="text-xs text-green-600"></a>
           </div>
-              <select aria-label="Default select example"
-                className="bg-amber-100 text-green-600 focus:outline-none focus:shadow-outline border border-green-600 rounded py-2 px-4 block w-full appearance-none"
-              >
-                <option>Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-                </select>
+             
+        <select 
+         className="bg-amber-100 text-green-600 focus:outline-none focus:shadow-outline border border-green-600 rounded py-2 px-4 block w-full appearance-none"
+          value={zonaId} 
+          id='zona'
+          onChange={handleChange}>
+          {zonas.map((zona) => (
+            // eslint-disable-next-line react/jsx-key
+            <option value={zona.id}>{zona.nombre}</option>
+          ))}
+        </select>
+     
+          
           <br />
            
           <div className="mt-4">
@@ -91,38 +122,66 @@ function Registrar() {
     </div>
     </>
   );
-}
 
-const handleRegister = async () => {
+
+async function  handleRegister() {
+  
   const nombre = document.getElementById('nombre').value;
   const apellido = document.getElementById('apellido').value;
   const username = document.getElementById('username').value;
   const password = document.getElementById('password').value;
   const repetirpassword = document.getElementById('repetirpassword').value;
-
+  const zonaId = document.getElementById('zona').value;
+  
   if (password !== repetirpassword) {
     alert('Las contraseñas no coinciden');
     return;
   }
-
-  try {
-    const response = await axios.post('https://api.reciclarg.cloud/users', {
-      nombre: nombre,
-      apellido: apellido,
-      username: username,
-      password: password,
+  let zona = zonas.find((zona) => zona.id == zonaId);
+    let params = JSON.stringify({
+      "id" : null,
+      "nombre": nombre,
+      "apellido": apellido,
+      "username": username,
+      "password": password,
+      "baja": null,
+      "alta": null,
+      "enable": null,
+      "token": null,
+      "zona":zona,
+      "fotoPerfi" : null
+      
     });
-console.log(response.data)
-  if (response.data === 'Usuario creado exitosamente') {
-      alert('Registro exitoso');
-      // Redirige a otra página o realiza alguna acción adicional
-    } else {
-      alert('No se pudo generar el registro');
-    }
-  } catch (error) {
-    alert('Error en el registro');
-  }
-};
+  
+    
+    // try{
+    //   console.log("select "+this.selectedFile)
+    let response = await service.newUser('user/newuser',params, selectedFile);
+     console.log(response);
+    // }
+    // catch (error) {
+    //   console.log(error);
+    // }
 
+//   try {
+//     const response = await axios.post('https://api.reciclarg.cloud/users', {
+//       nombre: nombre,
+//       apellido: apellido,
+//       username: username,
+//       password: password,
+//     });
+// console.log(response.data)
+//   if (response.data === 'Usuario creado exitosamente') {
+//       alert('Registro exitoso');
+//       // Redirige a otra página o realiza alguna acción adicional
+//     } else {
+//       alert('No se pudo generar el registro');
+//     }
+//   } catch (error) {
+//     alert('Error en el registro');
+//   }
+  
+}
 
+}
 export default Registrar;
