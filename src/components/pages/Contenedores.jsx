@@ -5,7 +5,7 @@ import background2 from '../img/background-5.jpeg';
 function Contenedores() {
     return (
 
-        <section className="bg-no-repeat bg-cover "  style={{ backgroundImage: `url(${background1}) ` }}>
+        <section className="bg-no-repeat bg-cover " id="Contenedores1" style={{ backgroundImage: `url(${background1}) ` }}>
             <h2 className="text-2xl sm:text-3xl font-bold mb-12 bg-center text-center bg-contain bg-no-repeat bg-cover text-green-600" 
                 style={{ backgroundImage: {background2}}}>
                 <br />A CONTINACIÓN, <br />EXPLORAREMOS LOS CONTENEDORES <br />DE RECICLAJE SEGÚN SU COLOR.<br /><br />

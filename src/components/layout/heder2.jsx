@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Heder2({ isLoggedIn, onLogout, username }) {
   const [showMenu, setShowMenu] = useState(false);
-  const location = useLocation();
 
   useEffect(() => {
     const handleResize = () => {
@@ -45,25 +44,25 @@ function Heder2({ isLoggedIn, onLogout, username }) {
               <div className="hidden md:flex items-center space-x-1">
                 <Link
                   to="/"
-                  className={`py-4 px-2 font-semibold ${location.pathname === '/' ? 'text-green-500 border-b-4 border-green-500' : 'text-gray-500 hover:text-green-500 transition duration-300'}`}
+                  className="py-4 px-2 text-green-500 border-b-4 border-green-500 font-semibold"
                 >
                   Inicio
                 </Link>
                 <Link
                   to="/Nosotros"
-                  className={`py-4 px-2 font-semibold ${location.pathname === '/Nosotros' ? 'text-green-500 border-b-4 border-green-500' : 'text-gray-500 hover:text-green-500 transition duration-300'}`}
+                  className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
                 >
                   Nosotros
                 </Link>
                 <Link
                   to="/Encuesta"
-                  className={`py-4 px-2 font-semibold ${location.pathname === '/Encuesta' ? 'text-green-500 border-b-4 border-green-500' : 'text-gray-500 hover:text-green-500 transition duration-300'}`}
+                  className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
                 >
                   Encuesta
                 </Link>
                 <Link
                   to="/Faq"
-                  className={`py-4 px-2 font-semibold ${location.pathname === '/Faq' ? 'text-green-500 border-b-4 border-green-500' : 'text-gray-500 hover:text-green-500 transition duration-300'}`}
+                  className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
                 >
                   FAQ
                 </Link>
