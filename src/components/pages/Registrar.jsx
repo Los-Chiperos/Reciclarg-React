@@ -4,11 +4,15 @@ import Service from '../../service/Service'
 
  
  
-
-function Registrar() {
-  const service =  new Service();
+ const service =  new Service();
    let zonas = {};
-   zonas =  service.getZonas('zona/listarzonas');
+    zonas = await  service.getZonas('zona/listarzonas');
+
+
+    function Registrar() {
+ 
+   
+   
 
    const [zonaId, setZona ] = React.useState();
    const [selectedFile, setSelectedFile] = React.useState();
