@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Service from './Service';
+import Service from '../../service/Service'
 
 class Registrar extends Component {
     constructor(props) {
