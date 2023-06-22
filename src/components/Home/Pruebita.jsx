@@ -8,7 +8,9 @@ import Contenedores from "../pages/Contenedores";
 import { Link } from "react-scroll";
 function Pruebita() {
   return (
+    
     <section className="shadow-lg">
+      
       <div
         className="h-auto px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16 bg-cover"
         style={{ backgroundImage: `url(${eco})` }}
