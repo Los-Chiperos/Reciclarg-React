@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function Heder2({ isLoggedIn, onLogout, username }) {
   const [showMenu, setShowMenu] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleResize = () => {
@@ -42,31 +43,31 @@ function Heder2({ isLoggedIn, onLogout, username }) {
                 </Link>
               </div>
               <div className="hidden md:flex items-center space-x-1">
-                <Link
-                  to="/"
-                  className="py-4 px-2 text-green-500 border-b-4 border-green-500 font-semibold"
-                >
-                  Inicio
-                </Link>
-                <Link
-                  to="/Nosotros"
-                  className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
-                >
-                  Nosotros
-                </Link>
-                <Link
-                  to="/Encuesta"
-                  className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
-                >
-                  Encuesta
-                </Link>
-                <Link
-                  to="/Faq"
-                  className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
-                >
-                  FAQ
-                </Link>
-              </div>
+        <Link
+          to="/"
+          className={`py-4 px-2 font-semibold ${location.pathname === '/' ? 'border-b-4 border-green-500' : 'text-gray-500 hover:text-green-500 transition-all duration-500'}`}
+        >
+          Inicio
+        </Link>
+        <Link
+          to="/Nosotros"
+          className={`py-4 px-2 font-semibold ${location.pathname === '/Nosotros' ? 'border-b-4 border-green-500' : 'text-gray-500 hover:text-green-500 transition-all duration-500'}`}
+        >
+          Nosotros
+        </Link>
+        <Link
+          to="/Encuesta"
+          className={`py-4 px-2 font-semibold ${location.pathname === '/Encuesta' ? 'border-b-4 border-green-500' : 'text-gray-500 hover:text-green-500 transition-all duration-500'}`}
+        >
+          Encuesta
+        </Link>
+        <Link
+          to="/Faq"
+          className={`py-4 px-2 font-semibold ${location.pathname === '/Faq' ? 'border-b-4 border-green-500' : 'text-gray-500 hover:text-green-500 transition-all duration-500'}`}
+        >
+          FAQ
+        </Link>
+      </div>
             </div>
             <div className="md:hidden flex items-center">
               <button
