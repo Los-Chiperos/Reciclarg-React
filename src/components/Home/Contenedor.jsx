@@ -1,4 +1,6 @@
 
+import { Link } from "react-scroll";
+
 function Contenedor() {
     return (
       <section className="mb-32 text-gray-800 text-center">
@@ -22,12 +24,14 @@ function Contenedor() {
                 </p>
                 <button className="relative btn4 mt-12 px-10 py-7 border border-white uppercase font-semibold tracking-wider leading-none overflow-hidden" type="button">
                   <span className="absolute inset-x-0 h-3 bottom-0 bg-green-600"></span>
-                  <a
-  id="saber-mas"
-  href="#Contenedores1"
->
+                  <Link
+                    to="Contenedores1"
+                    smooth={true}
+                    duration={800}
+                  >
   Saber Más
-</a>
+</Link>
+       
        
                 </button>
               </div>
@@ -50,12 +54,13 @@ function Contenedor() {
                 </p>
                 <button className="relative btn4 mt-12 px-10 py-7 border border-white uppercase font-semibold tracking-wider leading-none overflow-hidden" type="button">
                   <span className="absolute inset-x-0 h-3 bottom-0 bg-green-600"></span>
-                  <a
-  id="saber-mas"
-  href="#Contenedores1"
->
+                  <Link
+                    to="Contenedores1"
+                    smooth={true}
+                    duration={800}
+                  >
   Saber Más
-</a>
+</Link>
        
                 </button>
               </div>
@@ -78,12 +83,14 @@ function Contenedor() {
                 </p>
                 <button className="relative btn4 mt-12 px-10 py-7 border border-white uppercase font-semibold tracking-wider leading-none overflow-hidden" type="button">
                   <span className="absolute inset-x-0 h-3 bottom-0 bg-green-600"></span>
-                  <a
-  id="saber-mas"
-  href="#Contenedores1"
->
+                  <Link
+                    to="Contenedores1"
+                    smooth={true}
+                    duration={800}
+                  >
   Saber Más
-</a>
+</Link>
+       
        
                 </button>
               </div>
