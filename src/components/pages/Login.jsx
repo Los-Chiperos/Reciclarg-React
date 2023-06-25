@@ -23,7 +23,9 @@ const Login = ({ onLogin }) => {
     let response = await service.login('login',params);
     console.log("status " + response);
     if (response.status == 200){
-      onLogin(username);
+      console.log(response.data);
+      //const user = JSON.parse(response.data);
+      onLogin(response.data.nombre);
       navigate('/');
     } else {
       setError("Error de autenticación");
