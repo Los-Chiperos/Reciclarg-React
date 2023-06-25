@@ -1,4 +1,5 @@
 import axios from 'axios';
+//import fs from 'fs'
 
 
 let headers = { 
@@ -85,63 +86,36 @@ class Service{
         //   .catch(error => console.log('error', error));
     }
 
-    newUser(url, data , fileInput){
-        var myHeaders = new Headers();
-        //const stringParams = JSON.stringify(params);
-        //myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY4ODU0ODQzMCwibm9tYnJlIjoiYSJ9.KFYAcE18M0pdErMfPPQEZKbk8lwy0BzP_GyJIbSxkl7kphuKrGAh3yX13FeuPTvGH0m5Fkh9gjfdkYmS1ij68g");
-        myHeaders.append('Content-Type', 'multipart/form-data; boundary= 50000');
-       //myHeaders.append('Content-Type', 'application/json');
-      
-        var formdata = new FormData();
-        formdata.append("user", data);
-        formdata.append("image", fileInput, fileInput.name);
-       
-        console.log(data);
-        var requestOptions = {
-          method: 'POST',
+    newUser_(url,data,fileInput){
+        let formdata = new FormData();
+       formdata.append('image', fileInput);
+        formdata.append("userString", data);
+
+         var myHeaders = new Headers(); 
+             //myHeaders.append('Accept', '*/*');
+         myHeaders.append('Content-Type', 'multipart/form-data; boundary= 50000');
+
+        let config = {
+          method: 'post',
           maxBodyLength: Infinity,
-          headers: myHeaders,
-          body: formdata,
-          redirect: 'follow'
+          url: this.joinUrl(url),
+          data : formdata,
+          headers:myHeaders          
+          
         };
 
-        fetch(this.joinUrl(url), requestOptions)
-          .then(response => response.text())
-          .then(result => console.log(result))
-          .catch(error => console.log('error', error));
-    }
-    // newUser(url, params = null, fileInput){
-    //     const formdata = new FormData();
-    //     console.log('entra a new user');
-    //     console.log(fileInput);
-    //     const myJSON = JSON.stringify(params);
-    //      url = joinUrl(this.domain,url);
-    //     formdata.append("user", myJSON);
-    //     formdata.append("image",fileInput, fileInput.name);
-        
-    //     let config = {
-    //         method: 'post',
-    //         maxBodyLength: Infinity,
-    //         mode: 'cors',
-    //         url: url,
-    //         headers: { 
-    //            // 'Authorization': token(),
-    //            'Access-Control-Allow-Origin': '*',
-    //         //    'Content-Type': 'multipart/form-data',
-    //          ...formdata.get('image'),
-    //          ...formdata.get('user')
-    //         },
-    //         data : params
-    //     };
-    //    return axios.request(config)
-    //         .then((response) => {
-    //              console.log(JSON.stringify(response.data));
-    //         })
-    //         .catch((error) => {
-    //             console.log(error);
-    //         });
-    // }
+        async function makeRequest() {
+            try {
+              const response = await axios.request(config);
+              console.log(JSON.stringify(response.data));
+            }
+            catch (error) {
+              console.log(error);
+            }
+        }
 
+        makeRequest();
+    }
 
 }
 
