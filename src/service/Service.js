@@ -86,13 +86,12 @@ class Service{
         //   .catch(error => console.log('error', error));
     }
 
-    newUser_(url,data,fileInput){
+    async newUser(url,data,fileInput){
         let formdata = new FormData();
-       formdata.append('image', fileInput);
+        formdata.append('image', fileInput);
         formdata.append("userString", data);
 
-         var myHeaders = new Headers(); 
-             //myHeaders.append('Accept', '*/*');
+         var myHeaders = new Headers();          
          myHeaders.append('Content-Type', 'multipart/form-data; boundary= 50000');
 
         let config = {
@@ -104,19 +103,30 @@ class Service{
           
         };
 
-        async function makeRequest() {
-            try {
-              const response = await axios.request(config);
-              console.log(JSON.stringify(response.data));
-            }
-            catch (error) {
-              console.log(error);
-            }
-        }
+        return   axios.request(config)
+            .then((response) => {
+                return response;
+                
+                }                 
+            ).catch((error) => {
+                console.log(error); 
+                              
+            })
+            ;
+        // async function makeRequest() {
+        //     try {
+        //       const response = await axios.request(config);
+        //       //console.log(JSON.stringify(response.data));
+        //       return response;
+        //     }
+        //     catch (error) {
+        //       console.log(error);
+        //     }
+        // }
 
-        makeRequest();
+        // makeRequest();
     }
-
+    
 }
 
 export default Service;

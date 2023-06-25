@@ -4,20 +4,17 @@ import { useNavigate } from 'react-router-dom';
 
 
  
- 
  const service =  new Service();
-   let zonas = {};
-    zonas = await  service.getZonas('zona/listarzonas');
-
-
-    function Registrar() {
+ let zonas = {};
+ zonas = await service.getZonas('zona/listarzonas');
  
-   
-   
 
+
+  function Registrar() {
+   
    const [zonaId, setZona ] = React.useState();
    const [selectedFile, setSelectedFile] = React.useState();
-   
+   const navigate = useNavigate();
 
    const handleChange = (event) => {
     setZona(event.target.value);
@@ -129,7 +126,7 @@ import { useNavigate } from 'react-router-dom';
   );
 
 
-async function  handleRegister() {
+  async function  handleRegister() {
   
   const nombre = document.getElementById('nombre').value;
   const apellido = document.getElementById('apellido').value;
@@ -159,33 +156,16 @@ async function  handleRegister() {
     });
   
     
-    // try{
-    //   console.log("select "+this.selectedFile)
+    
     let response = await service.newUser('user/newuser',params, selectedFile);
-     console.log(response);
-    // }
-    // catch (error) {
-    //   console.log(error);
-    // }
+    console.log(response);
+    if(response.status == 200 && response.data =="Registro ok"){
+      alert(response.data);
+      navigate('/Login');
+    }else{
+      alert(response.data);
+    }
 
-//   try {
-//     const response = await axios.post('https://api.reciclarg.cloud/users', {
-//       nombre: nombre,
-//       apellido: apellido,
-//       username: username,
-//       password: password,
-//     });
-// console.log(response.data)
-//   if (response.data === 'Usuario creado exitosamente') {
-//       alert('Registro exitoso');
-//       // Redirige a otra página o realiza alguna acción adicional
-//     } else {
-//       alert('No se pudo generar el registro');
-//     }
-//   } catch (error) {
-//     alert('Error en el registro');
-//   }
-  
+  }
 }
-
 export default Registrar;
