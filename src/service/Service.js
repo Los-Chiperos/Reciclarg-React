@@ -126,6 +126,19 @@ class Service{
 
         // makeRequest();
     }
+
+    async getNosotros(url, data = null){
+        
+            url = this.joinUrl(url);
+        return   axios.request(config('get',url,data))
+            .then((response) => {
+                return response.data;                
+                }                 
+            ).catch((error) => {
+                console.log(error);                               
+            })
+            ;
+    }
     
 }
 

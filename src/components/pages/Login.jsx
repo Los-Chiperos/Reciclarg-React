@@ -23,8 +23,7 @@ const Login = ({ onLogin }) => {
     let response = await service.login('login',params);
     console.log("status " + response);
     if (response.status == 200){
-      console.log(response.data);
-      //const user = JSON.parse(response.data);
+      
       onLogin(response.data.nombre);
       navigate('/');
     } else {
@@ -33,33 +32,6 @@ const Login = ({ onLogin }) => {
   };
    
    
-    //  console.log(params);
-    //  let config = {
-    //     method: 'post',
-    //     maxBodyLength: Infinity,
-    //     url: 'http://localhost:8080/login',
-    //     headers: { 
-    //       'Content-Type': 'application/json'
-    //     },
-    //     data : params   
-    //     };
-
-    //  axios.request(config)
-    //       .then((response) => {
-    //       console.log(JSON.stringify(response.data));
-    //         if (response.status === 200) {
-    //         onLogin(username);
-    //         var token = response.headers.get('Authorization');
-    //         localStorage.setItem('token',token);
-    //         navigate('/');
-    //         }
-    //         })
-    //       .catch((error) => {
-    //         console.log(error);
-    //          setError("Error de autenticación");
-    //       });
-
-
 
 
 
