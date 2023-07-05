@@ -1,109 +1,152 @@
-// UserProfile.js
-import React from 'react';
+// UserProfile.jsx
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
-class UserProfile extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            user: {
-                name: '',
-                email: props.username,
-            },
-            isEditMode: false,
-        };
-
-        this.handleInputChange = this.handleInputChange.bind(this);
-        this.toggleEditMode = this.toggleEditMode.bind(this);
-        this.saveChanges = this.saveChanges.bind(this);
-    }
-
-    componentDidMount() {
-        const userId = 'usuario-id';
-        axios.get(`https://api.reciclarg.cloud/users/${userId}`)
-            .then(response => {
-                this.setState({
-                    user: response.data,
-                });
-            });
-    }
-
-    handleInputChange(event) {
-        const target = event.target;
-        const value = target.value;
-        const name = target.name;
-
-        this.setState(prevState => ({
-            user: {
-                ...prevState.user,
-                [name]: value
-            }
+function UserProfile() {
+  const { username } = useParams();
+  const [user, setUser] = useState({
+    nombre: '',
+    apellido: '',
+    email: username,
+    password: '',
+    passwordConfirmation: '',
+  });
+  const [isEditMode, setIsEditMode] = useState(false);
+console.log(username);
+  useEffect(() => {
+    axios.get(`https://api.reciclarg.cloud/users/${username}`)
+      .then(response => {
+        setUser(prevUser => ({
+          ...prevUser,
+          nombre: response.data.nombre,
+          apellido: response.data.apellido,
         }));
+      })
+      .catch(error => {
+        console.error('Error al obtener los datos del usuario:', error);
+      });
+  }, [username]);
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+
+    setUser(prevUser => ({
+      ...prevUser,
+      [name]: value,
+    }));
+  };
+
+  const toggleEditMode = () => {
+    setIsEditMode(prevEditMode => !prevEditMode);
+  };
+
+  const saveChanges = () => {
+    if (user.password !== user.passwordConfirmation) {
+      alert('Las contraseñas no coinciden. Por favor, vuelva a intentarlo.');
+      return;
     }
 
-    toggleEditMode() {
-        this.setState(prevState => ({
-            isEditMode: !prevState.isEditMode,
+    axios.put(`https://api.reciclarg.cloud/users/${username}`, user)
+      .then(response => {
+        setUser(prevUser => ({
+          ...prevUser,
+          nombre: response.data.nombre,
+          apellido: response.data.apellido,
         }));
-    }
+        setIsEditMode(false);
+        window.location.reload();
+      })
+      .catch(error => {
+        console.error('Error al guardar los cambios:', error);
+        alert('Ocurrió un error al guardar los cambios. Por favor, intenta nuevamente.');
+      });
+  };
 
-    saveChanges() {
-        const userId = 'usuario-id';
-        axios.put(`https://api.reciclarg.cloud/users/${userId}`, this.state.user)
-            .then(response => {
-                this.setState({
-                    user: response.data,
-                    isEditMode: false,
-                });
-            });
-    }
-
-    render() {
-        const cardStyle = {
-            width: '30rem',
-            margin: '0 auto',
-            padding: '20px',
-            borderRadius: '15px',
-            boxShadow: '0 0 10px rgba(0,0,0,0.15)',
-        };
-        
-        const inputContainerStyle = {
-            marginLeft: '10px',
-        };
-        
-        return (
-            <div style={cardStyle}>
-                <h2 style={{textAlign: 'center'}}>Perfil de Usuario</h2>
-                <div style={{marginBottom: '10px'}}>
-                    <label>
-                        Nombre:
-                        <div style={inputContainerStyle}>
-                            {this.state.isEditMode ?
-                                <input name="name" value={this.state.user.name} onChange={this.handleInputChange} /> :
-                                <span>{this.state.user.name}</span>}
-                        </div>
-                    </label>
-                </div>
-                <div style={{marginBottom: '10px'}}>
-                    <label>
-                        Email:
-                        <div style={inputContainerStyle}>
-                            {this.state.isEditMode ?
-                                <input name="email" value={this.state.user.email} onChange={this.handleInputChange} /> :
-                                <span>{this.state.user.email}</span>}
-                        </div>
-                    </label>
-                </div>
-                <div style={{textAlign: 'center'}}>
-                    <button onClick={this.toggleEditMode} style={{marginRight: '10px'}}>
-                        {this.state.isEditMode ? 'Cancelar' : 'Editar'}
-                    </button>
-                    {this.state.isEditMode &&
-                        <button onClick={this.saveChanges}>Guardar</button>}
-                </div>
-            </div>
-        );
-    }
+  return (
+    <div className="mx-auto w-full max-w-lg py-10 p-4">
+      <h2 className="text-center text-2xl font-bold mb-4 py-5">{isEditMode ? 'Modificar Datos' : 'Perfil de Usuario'}</h2>
+      <div className="mb-4">
+        <label className="block text-sm font-bold mb-2">Nombre:</label>
+        {isEditMode ? (
+          <input
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            name="nombre"
+            value={user.nombre}
+            onChange={handleInputChange}
+          />
+        ) : (
+          <span className="block bg-gray-100 rounded py-2 px-3 text-gray-700">{user.nombre}</span>
+        )}
+      </div>
+      <div className="mb-4">
+        <label className="block text-sm font-bold mb-2">Apellido:</label>
+        {isEditMode ? (
+          <input
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            name="apellido"
+            value={user.apellido}
+            onChange={handleInputChange}
+          />
+        ) : (
+          <span className="block bg-gray-100 rounded py-2 px-3 text-gray-700">{user.apellido}</span>
+        )}
+      </div>
+      <div className="mb-4">
+        <label className="block text-sm font-bold mb-2">Email:</label>
+        {isEditMode ? (
+          <input
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            name="email"
+            value={user.email}
+            onChange={handleInputChange}
+          />
+        ) : (
+          <span className="block bg-gray-100 rounded py-2 px-3 text-gray-700">{user.email}</span>
+        )}
+      </div>
+      {isEditMode && (
+        <>
+          <div className="mb-4">
+            <label className="block text-sm font-bold mb-2">Contraseña:</label>
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              type="password"
+              name="password"
+              value={user.password}
+              onChange={handleInputChange}
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block text-sm font-bold mb-2">Confirmar contraseña:</label>
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              type="password"
+              name="passwordConfirmation"
+              value={user.passwordConfirmation}
+              onChange={handleInputChange}
+            />
+          </div>
+        </>
+      )}
+      <div className="flex justify-center">
+        <button
+          className="bg-green-600 text-amber-100 hover:bg-amber-100 hover:text-green-600 font-bold py-2 px-4 rounded mr-4 focus:outline-none focus:shadow-outline"
+          onClick={toggleEditMode}
+        >
+          {isEditMode ? 'Cancelar' : 'Editar'}
+        </button>
+        {isEditMode && (
+          <button
+            className="bg-green-600 text-amber-100 hover:bg-amber-100 hover:text-green-600 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            onClick={saveChanges}
+          >
+            Guardar
+          </button>
+        )}
+      </div>
+    </div>
+  );
 }
 
 export default UserProfile;

@@ -2,17 +2,20 @@ import React, { useState } from 'react';
 // import axios from 'axios';
 import Service from '../../service/Service'
 import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
  
 const Login = ({ onLogin }) => {
-  const [username, setUsername] = React.useState("");
-  const [password, setPassword] = React.useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
  
   const service =  new Service();
 
   const handleLogin = async () => {
+
    
        console.log(username + " " + password);
      let params = JSON.stringify({
@@ -28,11 +31,13 @@ const Login = ({ onLogin }) => {
       navigate('/');
     } else {
       setError("Error de autenticación");
+
     }
   };
 
   return (
     <div className="py-6">
+      <ToastContainer position="top-center" />
       <div className="flex bg-white rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl">
         <div
           className="hidden lg:block lg:w-1/2 bg-cover"
@@ -43,7 +48,6 @@ const Login = ({ onLogin }) => {
         ></div>
         <div className="w-full p-8 lg:w-1/2">
           <h2 className="text-4xl font-bold text-green-600 text-center">Ingresar</h2>
-          {error && <p>{error}</p>}
           <div className="mt-4 flex items-center justify-between"></div>
           <div className="mt-4">
             <label className="block text-green-600 text-sm font-bold mb-2">Username</label>
@@ -99,4 +103,3 @@ const Login = ({ onLogin }) => {
 };
 
 export default Login;
-

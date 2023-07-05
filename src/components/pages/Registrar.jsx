@@ -65,6 +65,7 @@ import { useNavigate } from 'react-router-dom';
             
             <br />
 
+
           </div>
           <div className="mt-4">
             <label className="block text-green-600 text-sm font-bold mb-2">Repetir contraseña</label>
@@ -121,7 +122,7 @@ import { useNavigate } from 'react-router-dom';
         </div>
       </div>
     </div>
-     
+    </>
   );
 
 
