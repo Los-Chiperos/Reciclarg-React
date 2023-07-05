@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router-dom';
 
  
 const Login = ({ onLogin }) => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = React.useState("");
+  const [password, setPassword] = React.useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
  
@@ -30,10 +30,6 @@ const Login = ({ onLogin }) => {
       setError("Error de autenticación");
     }
   };
-   
-   
-
-
 
   return (
     <div className="py-6">
