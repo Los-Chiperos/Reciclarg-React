@@ -17,7 +17,7 @@ const Login = ({ onLogin }) => {
   const handleLogin = async () => {
 
    
-       console.log(username + " " + password);
+     
      let params = JSON.stringify({
       "username": username,
       "password": password

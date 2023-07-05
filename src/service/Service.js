@@ -37,7 +37,7 @@ class Service{
     }
 //  --------------------------------------------
     async login(url, data = null){
-        console.log('entro login');
+       
             url = this.joinUrl(url);
         return   axios.request(config('post',url,data))
             .then((response) => {
