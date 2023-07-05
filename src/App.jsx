@@ -22,6 +22,7 @@ function App() {
 
   const handleLogout = () => {
     setIsLoggedIn(false);
+    //borrar token
   };
 
   return (

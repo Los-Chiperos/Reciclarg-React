@@ -1,29 +1,42 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
+import Service from '../../service/Service'
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+ 
 const Login = ({ onLogin }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+ 
+  const service =  new Service();
 
   const handleLogin = async () => {
-    try {
-      const response = await axios.post('https://api.reciclarg.cloud/auth', {
-        username,
-        password
-      });
 
-      if (response.status === 200) {
-        onLogin(username);
-        navigate('/');
-      }
-    } catch (error) {
-      toast.error("Error de autenticación");
+   
+       console.log(username + " " + password);
+     let params = JSON.stringify({
+      "username": username,
+      "password": password
+    });
+   
+    let response = await service.login('login',params);
+    console.log("status " + response);
+    if (response.status == 200){
+      
+      onLogin(response.data.nombre);
+      navigate('/');
+    } else {
+      setError("Error de autenticación");
+
     }
   };
+   
+   
+
+
 
   return (
     <div className="py-6">
@@ -40,10 +53,10 @@ const Login = ({ onLogin }) => {
           <h2 className="text-4xl font-bold text-green-600 text-center">Ingresar</h2>
           <div className="mt-4 flex items-center justify-between"></div>
           <div className="mt-4">
-            <label className="block text-green-600 text-sm font-bold mb-2">Email</label>
+            <label className="block text-green-600 text-sm font-bold mb-2">Username</label>
             <input
               className="bg-amber-100 text-green-600 focus:outline-none focus:shadow-outline border border-green-600 rounded py-2 px-4 block w-full appearance-none"
-              type="email"
+              type="text"
               id="username"
               value={username}
               onChange={e => setUsername(e.target.value)}

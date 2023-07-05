@@ -18,11 +18,4 @@ jobs:
       - run: ssh -o StrictHostKeyChecking=no -t -t nicolas_zelarayan@reciclarg.cloud "sudo docker rm reciclarg_container || true"
       - run: ssh -o StrictHostKeyChecking=no -t -t nicolas_zelarayan@reciclarg.cloud "sudo docker run -p 8082:80 -d --name reciclarg_container nicolaszelarayan/reciclarg2023:$CIRCLE_SHA1"
 
-workflows:
-  version: 2
-  build-and-deploy:
-    jobs:
-      - build:
-          filters:
-            branches:
-              only: main
+
