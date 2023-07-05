@@ -144,7 +144,7 @@ const Map = () => {
             }
 
             infowindow.open(map, new window.google.maps.Marker({
-              position: new window.google.maps.LatLng(nearestMarker.lat, nearestMarker.lng),
+              position: new window.google.maps.LatLng(nearestMarker.latitud, nearestMarker.longitud),
               map: map,
               title: nearestMarker.title,
             }));
