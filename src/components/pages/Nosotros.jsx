@@ -97,7 +97,7 @@ function ProfileCard({ member }) {
 // Obtener el url
 
 
-const url = URL.createObjectURL(new Blob([member.fotoPerfil.photo]));
+//const url = URL.createObjectURL(new Blob([member.fotoPerfil.photo]));
 
 
   return (
@@ -107,7 +107,7 @@ const url = URL.createObjectURL(new Blob([member.fotoPerfil.photo]));
       
       <img
         id="myImage"
-        src = {url}
+        src = {member.foto}
         className="w-24 h-24 rounded-full transition duration-200 hover:scale-110 mx-auto"
         
       />

@@ -75,8 +75,8 @@ const Map = () => {
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function (position) {
             const userLocation = {
-              latitud: position.coords.latitude,
-              longitud: position.coords.longitude,
+              lat: position.coords.latitude,
+              lng: position.coords.longitude,
             };
 
             const distances = markers.map(function (marker) {
@@ -122,7 +122,7 @@ const Map = () => {
               position: new window.google.maps.LatLng(nearestMarker.latitud, nearestMarker.latitud),
               map: map,
               title: nearestMarker.title,
-            });
+            }));
 
             infowindow.open(map, nearestMarkerInstance);
 
