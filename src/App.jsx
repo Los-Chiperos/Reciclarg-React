@@ -22,7 +22,7 @@ function App() {
 
   const handleLogout = () => {
     setIsLoggedIn(false);
-    //borrar token
+    localStorage.removeItem('token');
   };
 
   return (
