@@ -100,8 +100,8 @@ const Map = () => {
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function (position) {
             const userLocation = {
-              latitud: position.coords.latitude,
-              longitud: position.coords.longitude,
+              lat: position.coords.latitude,
+              lng: position.coords.longitude,
             };
 
             const distances = markers.map(function (marker) {
