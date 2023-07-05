@@ -29,7 +29,7 @@ class Service{
     }
 
     joinUrl(url){
-        return this.domain +'/'+ url;
+        return this.url1 +'/'+ url;
     }   
     Headers(){
         var myHeaders = new Headers();
