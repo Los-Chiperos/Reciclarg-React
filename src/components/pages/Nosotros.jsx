@@ -101,11 +101,15 @@ const url = URL.createObjectURL(new Blob([member.fotoPerfil.photo]));
 
 
   return (
-    <div className="card bg-amber-100 rounded-lg p-4 text-center w-64 h-85 mx-4">  
+    
+    <div className="card bg-amber-100  rounded-lg p-4 text-center w-64 h-85 mx-4" >
+    <br />  
+      
       <img
         id="myImage"
         src = {url}
         className="w-24 h-24 rounded-full transition duration-200 hover:scale-110 mx-auto"
+        
       />
 
       <div className="text-gray-900 text-lg font-bold">{member.nombre} {member.apellido}</div>
@@ -135,14 +139,26 @@ function Nosotros() {
   const secondHalf = teamMembers.slice(halfLength, teamMembers.length);
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen"
+    style={{
+      backgroundImage:
+      "url('https://www.ecovidrio.es/sites/default/files/2019-10/background-home-1.png')",
+    }}>
       <main className="flex-grow">
         <div className="container mx-auto py-8 bg-cover" 
-          style={{
-            backgroundImage:
-            "url('https://www.ecovidrio.es/sites/default/files/2019-10/background-home-1.png')",
-          }}
+      
         >
+          <div className="container flex justify-center mx-auto pt-16">
+            <div>
+              <h1 className="xl:text-4xl text-3xl text-center text-gray-800 font-extrabold pb-6 sm:w-4/6 w-5/6 mx-auto">¿Quienes Somos?</h1>
+              <p className="text-gray-500 text-lg text-center font-normal pb-3">
+                Somos un grupo de estudiantes de programación de la Facultad Tecnologica de San Rafael, el cual somos 8 integrantes de diferentes provincias. Actualmente estamos presentando este proyecto para proponer un cambio en la sociedad el cual deberia generar un impacto significativo en el medioambiente. Procuramos con esto realizar un cambio que impacte en la comunidad de la localidad de San Rafael y a su vez que también sea escalable para todo el país.
+              </p>
+              <br />
+              <br></br>
+              <br />
+            </div>
+          </div>
           <div className="flex items-center justify-center flex-wrap gap-2 px-12 mb-4">
             {firstHalf.map((member, index) => (
               <ProfileCard key={index} member={member} />
@@ -160,3 +176,7 @@ function Nosotros() {
 }
 
 export default Nosotros;
+
+
+
+

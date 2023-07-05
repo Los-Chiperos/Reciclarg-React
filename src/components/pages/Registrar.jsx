@@ -1,3 +1,4 @@
+
 import React   from 'react';
 import Service from '../../service/Service'
 import { useNavigate } from 'react-router-dom';
@@ -64,12 +65,14 @@ import { useNavigate } from 'react-router-dom';
             <input className="bg-amber-100 text-green-600 focus:outline-none focus:shadow-outline border border-green-600 rounded py-2 px-4 block w-full appearance-none" type="text" id='username'/>
           </div>
           <div className="mt-4">
+
             <div className="flex justify-between">
-              <label className="block text-green-600 text-sm font-bold mb-2">Contraseña</label>
-              <a href="#" className="text-xs text-text-green-600"></a>
+              <label className="block text-green-600 text-sm font-bold mb-2">Repetir contraseña</label>
+              <a href="#" className="text-xs text-green-600"></a>
             </div>
-            <input className="bg-amber-100 text-green-600 focus:outline-none focus:shadow-outline border border-green-600 rounded py-2 px-4 block w-full appearance-none" type="password" id='password'/>
+            <input className="bg-amber-100 text-green-600 focus:outline-none focus:shadow-outline border border-green-600 rounded py-2 px-4 block w-full appearance-none" type="password" id='repetirpassword' />
             <br />
+
           </div>
           <div className="flex justify-between">
             <label className="block text-green-600 text-sm font-bold mb-2">Repetir contraseña</label>
@@ -117,13 +120,14 @@ import { useNavigate } from 'react-router-dom';
             <span className="border-b w-1/5 md:w-1/4"></span>
             <a href="/Login" className="text-xs hover:font-semibold text-green-600 uppercase">¿Tienes cuenta? Logeate</a>
             <span className="border-b w-1/5 md:w-1/4"></span>
+
           </div>
 
         </div>
       </div>
-    </div>
     </>
   );
+
 
 
   async function  handleRegister() {
@@ -168,4 +172,5 @@ import { useNavigate } from 'react-router-dom';
 
   }
 }
+
 export default Registrar;
