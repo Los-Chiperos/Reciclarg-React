@@ -10,6 +10,15 @@ import Angelo from "../img/angelo.jpeg";
 import Leonardo from "../img/leonardo.jpeg";
 import Service from '../../service/Service'
 
+console.log(Nicolas);
+console.log(David);
+console.log(Cristian);
+console.log(Gonzalo);
+
+console.log(Juan);
+console.log(Agustin);
+console.log(Angelo);
+console.log(Leonardo);
 
 
 const teamMembers_ = [
@@ -97,8 +106,7 @@ function ProfileCard({ member }) {
 // Obtener el url
 
 
-//const url = URL.createObjectURL(new Blob([member.fotoPerfil.photo]));
-
+//
 
   return (
     
