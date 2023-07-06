@@ -10,15 +10,15 @@ import Angelo from "../img/angelo.jpeg";
 import Leonardo from "../img/leonardo.jpeg";
 import Service from '../../service/Service'
 
-console.log(Nicolas);
-console.log(David);
-console.log(Cristian);
-console.log(Gonzalo);
+// console.log(Nicolas);
+// console.log(David);
+// console.log(Cristian);
+// console.log(Gonzalo);
 
-console.log(Juan);
-console.log(Agustin);
-console.log(Angelo);
-console.log(Leonardo);
+// console.log(Juan);
+// console.log(Agustin);
+// console.log(Angelo);
+// console.log(Leonardo);
 
 
 const teamMembers_ = [
@@ -115,7 +115,7 @@ function ProfileCard({ member }) {
       
       <img
         id="myImage"
-        src = {Nicolas}
+        src = {member.foto}
         className="w-24 h-24 rounded-full transition duration-200 hover:scale-110 mx-auto"
         
       />
