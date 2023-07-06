@@ -107,7 +107,7 @@ function ProfileCard({ member }) {
       
       <img
         id="myImage"
-        src = {member.foto}
+        src = {Cristian}
         className="w-24 h-24 rounded-full transition duration-200 hover:scale-110 mx-auto"
         
       />
