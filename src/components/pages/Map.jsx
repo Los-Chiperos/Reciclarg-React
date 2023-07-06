@@ -124,7 +124,7 @@ const Map = () => {
               title: nearestMarker.title,
             }));
 
-            //infowindow.open(map, nearestMarkerInstance);
+            infowindow.open(map, nearestMarkerInstance);
 
             currentInfoWindow = infowindow;
           });
